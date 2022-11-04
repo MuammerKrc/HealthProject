@@ -78,8 +78,8 @@ namespace DataLayer.Repositories.BaseRepositories
 
         public IQueryable<TModel> GetWhereAsync(Expression<Func<TModel, bool>> method)
         {
-           return _entities.Where(method).AsQueryable();
-            
+            return _entities.Where(method).AsQueryable();
+
         }
 
         public async Task<TModel> GetSingleAsync(Expression<Func<TModel, bool>> method, bool tracking = false)
@@ -93,6 +93,11 @@ namespace DataLayer.Repositories.BaseRepositories
         public DbSet<TModel> GetContext()
         {
             return _entities;
+        }
+
+        public async Task<int> SaveAsync()
+        {
+            return await _context.SaveChangesAsync();
         }
     }
 }

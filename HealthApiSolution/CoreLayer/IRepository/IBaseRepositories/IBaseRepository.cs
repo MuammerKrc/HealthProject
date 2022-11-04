@@ -24,5 +24,6 @@ namespace CoreLayer.IRepositories.IBaseRepositories
         IQueryable<TModel> GetWhereAsync(Expression<Func<TModel, bool>> method);
         Task<TModel> GetSingleAsync(Expression<Func<TModel, bool>> method, bool tracking = false);
         DbSet<TModel> GetContext();
+        Task<int> SaveAsync();
     }
 }
