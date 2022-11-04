@@ -9,6 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using CoreLayer.ConfigurationModels;
+using CoreLayer.IRepository;
 using CoreLayer.IUnitOfWorks;
 using DataLayer.UnitOfWorks;
 using Microsoft.AspNetCore.Identity;
@@ -39,11 +40,22 @@ namespace DataLayer
             }).AddEntityFrameworkStores<MovieDbContext>().AddDefaultTokenProviders();
 
             //UnitOfWorks
-       
+
 
             //repository registered
             services.AddScoped(typeof(IBaseRepository<,>), typeof(BaseRepository<,>));
-       
+
+            services.AddScoped<IAnamnesisFormRepository, AnamnesisFormRepository>();
+            services.AddScoped<IBodyInfoRepository, BodyInfoRepository>();
+            services.AddScoped<IBuyingReportRepository, BuyingReportRepository>();
+            services.AddScoped<IDietRepository, DietRepository>();
+            services.AddScoped<IDietWeeklyRepository, DietWeeklyRepository>();
+            services.AddScoped<INutritionScheduleItemRepository, NutritionScheduleItemRepository>();
+            services.AddScoped<INutritionScheduleRepository, NutritionScheduleRepository>();
+            services.AddScoped<IPackageItemRepository, PackageItemRepository>();
+            services.AddScoped<IPackageRepository, PackageRepository>();
+            services.AddScoped<IPilatesRepository, PilatesRepository>();
+            services.AddScoped<IPilatesWeeklyRepository, PilatesWeeklyRepository>();
 
         }
     }
