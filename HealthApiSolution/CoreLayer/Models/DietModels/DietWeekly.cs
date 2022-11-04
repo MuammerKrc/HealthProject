@@ -19,6 +19,6 @@ namespace CoreLayer.Models.DietModels
 
         [ForeignKey("DietId")]
         public Diet? Diet { get; set; }
-        public NutritionSchedule NutritionSchedule { get; set; }
+        public NutritionSchedule? NutritionSchedule { get; set; }
     }
 }

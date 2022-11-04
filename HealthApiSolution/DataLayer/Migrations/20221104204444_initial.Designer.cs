@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataLayer.Migrations
 {
     [DbContext(typeof(MovieDbContext))]
-    [Migration("20221024191353_initial")]
+    [Migration("20221104204444_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,7 +24,7 @@ namespace DataLayer.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("CoreLayer.Models.Category", b =>
+            modelBuilder.Entity("CoreLayer.Models.AnamnesisFormModels.AnamnesisForm", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -35,22 +35,114 @@ namespace DataLayer.Migrations
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<int>("DietId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Question1")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Question2")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Question3")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Question4")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Question5")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Question6")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<bool>("SoftDeleted")
                         .HasColumnType("bit");
-
-                    b.Property<string>("Title")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("UpdateDate")
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categories");
+                    b.HasIndex("DietId")
+                        .IsUnique();
+
+                    b.ToTable("AnamnesisForm");
                 });
 
-            modelBuilder.Entity("CoreLayer.Models.FavoriteMovies", b =>
+            modelBuilder.Entity("CoreLayer.Models.BodyInfoModels.BodyInfo", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("Age")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("SoftDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("UpdateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId")
+                        .IsUnique()
+                        .HasFilter("[UserId] IS NOT NULL");
+
+                    b.ToTable("BodyInfo");
+                });
+
+            modelBuilder.Entity("CoreLayer.Models.BuyingReportsModel.BuyingReport", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("PaymentResultType")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PaymentType")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("SoftDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<float>("TotalPrice")
+                        .HasColumnType("real");
+
+                    b.Property<DateTime>("UpdateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("BuyingReport");
+                });
+
+            modelBuilder.Entity("CoreLayer.Models.DietModels.Diet", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -68,15 +160,116 @@ namespace DataLayer.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("UserId")
-                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
                     b.HasIndex("UserId")
+                        .IsUnique()
+                        .HasFilter("[UserId] IS NOT NULL");
+
+                    b.ToTable("Diet");
+                });
+
+            modelBuilder.Entity("CoreLayer.Models.DietModels.DietWeekly", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<DateTime?>("AppointmentDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("DietId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("IsCompleted")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsNextItem")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("Queue")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("SoftDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("UpdateDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("DietId");
+
+                    b.ToTable("DietWeekly");
+                });
+
+            modelBuilder.Entity("CoreLayer.Models.DietModels.NutritionSchedule", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("DietWeeklyId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("SoftDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("UpdateDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("DietWeeklyId")
                         .IsUnique();
 
-                    b.ToTable("FavoriteMovies");
+                    b.ToTable("NutritionSchedule");
+                });
+
+            modelBuilder.Entity("CoreLayer.Models.DietModels.NutritionScheduleItem", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("MealTimeType")
+                        .HasColumnType("int");
+
+                    b.Property<int>("NutritionScheduleId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("SoftDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("UpdateDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NutritionScheduleId");
+
+                    b.ToTable("NutritionScheduleItem");
                 });
 
             modelBuilder.Entity("CoreLayer.Models.IdentityModels.AppRole", b =>
@@ -189,7 +382,7 @@ namespace DataLayer.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
-            modelBuilder.Entity("CoreLayer.Models.Movie", b =>
+            modelBuilder.Entity("CoreLayer.Models.PilatesModels.Pilates", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -197,40 +390,64 @@ namespace DataLayer.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int>("CategoryId")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("FavoriteMoviesId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("ImagePath")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("SoftDeleted")
                         .HasColumnType("bit");
 
-                    b.Property<string>("Title")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime>("UpdateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId")
+                        .IsUnique()
+                        .HasFilter("[UserId] IS NOT NULL");
+
+                    b.ToTable("Pilates");
+                });
+
+            modelBuilder.Entity("CoreLayer.Models.PilatesModels.PilatesWeekly", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<DateTime?>("AppointmentDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsCompleted")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsNextItem")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("PilatesId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Queue")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("SoftDeleted")
+                        .HasColumnType("bit");
 
                     b.Property<DateTime>("UpdateDate")
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CategoryId");
+                    b.HasIndex("PilatesId");
 
-                    b.HasIndex("FavoriteMoviesId");
-
-                    b.ToTable("Movies");
+                    b.ToTable("PilatesWeekly");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -339,30 +556,95 @@ namespace DataLayer.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("CoreLayer.Models.FavoriteMovies", b =>
+            modelBuilder.Entity("CoreLayer.Models.AnamnesisFormModels.AnamnesisForm", b =>
                 {
-                    b.HasOne("CoreLayer.Models.IdentityModels.AppUser", "User")
-                        .WithOne("FavoriteMovies")
-                        .HasForeignKey("CoreLayer.Models.FavoriteMovies", "UserId")
+                    b.HasOne("CoreLayer.Models.DietModels.Diet", "Diet")
+                        .WithOne("AnamnesisForm")
+                        .HasForeignKey("CoreLayer.Models.AnamnesisFormModels.AnamnesisForm", "DietId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Diet");
+                });
+
+            modelBuilder.Entity("CoreLayer.Models.BodyInfoModels.BodyInfo", b =>
+                {
+                    b.HasOne("CoreLayer.Models.IdentityModels.AppUser", "User")
+                        .WithOne("BodyInfo")
+                        .HasForeignKey("CoreLayer.Models.BodyInfoModels.BodyInfo", "UserId");
 
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("CoreLayer.Models.Movie", b =>
+            modelBuilder.Entity("CoreLayer.Models.BuyingReportsModel.BuyingReport", b =>
                 {
-                    b.HasOne("CoreLayer.Models.Category", "Category")
-                        .WithMany("Movies")
-                        .HasForeignKey("CategoryId")
+                    b.HasOne("CoreLayer.Models.IdentityModels.AppUser", "User")
+                        .WithMany("BuyingReports")
+                        .HasForeignKey("UserId");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("CoreLayer.Models.DietModels.Diet", b =>
+                {
+                    b.HasOne("CoreLayer.Models.IdentityModels.AppUser", "User")
+                        .WithOne("Diet")
+                        .HasForeignKey("CoreLayer.Models.DietModels.Diet", "UserId");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("CoreLayer.Models.DietModels.DietWeekly", b =>
+                {
+                    b.HasOne("CoreLayer.Models.DietModels.Diet", "Diet")
+                        .WithMany("DietWeeklies")
+                        .HasForeignKey("DietId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("CoreLayer.Models.FavoriteMovies", null)
-                        .WithMany("Movies")
-                        .HasForeignKey("FavoriteMoviesId");
+                    b.Navigation("Diet");
+                });
 
-                    b.Navigation("Category");
+            modelBuilder.Entity("CoreLayer.Models.DietModels.NutritionSchedule", b =>
+                {
+                    b.HasOne("CoreLayer.Models.DietModels.DietWeekly", "DietWeekly")
+                        .WithOne("NutritionSchedule")
+                        .HasForeignKey("CoreLayer.Models.DietModels.NutritionSchedule", "DietWeeklyId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("DietWeekly");
+                });
+
+            modelBuilder.Entity("CoreLayer.Models.DietModels.NutritionScheduleItem", b =>
+                {
+                    b.HasOne("CoreLayer.Models.DietModels.NutritionSchedule", "NutritionSchedule")
+                        .WithMany("NutritionScheduleItems")
+                        .HasForeignKey("NutritionScheduleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("NutritionSchedule");
+                });
+
+            modelBuilder.Entity("CoreLayer.Models.PilatesModels.Pilates", b =>
+                {
+                    b.HasOne("CoreLayer.Models.IdentityModels.AppUser", "User")
+                        .WithOne("Pilates")
+                        .HasForeignKey("CoreLayer.Models.PilatesModels.Pilates", "UserId");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("CoreLayer.Models.PilatesModels.PilatesWeekly", b =>
+                {
+                    b.HasOne("CoreLayer.Models.PilatesModels.Pilates", "Pilates")
+                        .WithMany("PilatesWeeklies")
+                        .HasForeignKey("PilatesId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Pilates");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -416,20 +698,37 @@ namespace DataLayer.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("CoreLayer.Models.Category", b =>
+            modelBuilder.Entity("CoreLayer.Models.DietModels.Diet", b =>
                 {
-                    b.Navigation("Movies");
+                    b.Navigation("AnamnesisForm");
+
+                    b.Navigation("DietWeeklies");
                 });
 
-            modelBuilder.Entity("CoreLayer.Models.FavoriteMovies", b =>
+            modelBuilder.Entity("CoreLayer.Models.DietModels.DietWeekly", b =>
                 {
-                    b.Navigation("Movies");
+                    b.Navigation("NutritionSchedule");
+                });
+
+            modelBuilder.Entity("CoreLayer.Models.DietModels.NutritionSchedule", b =>
+                {
+                    b.Navigation("NutritionScheduleItems");
                 });
 
             modelBuilder.Entity("CoreLayer.Models.IdentityModels.AppUser", b =>
                 {
-                    b.Navigation("FavoriteMovies")
-                        .IsRequired();
+                    b.Navigation("BodyInfo");
+
+                    b.Navigation("BuyingReports");
+
+                    b.Navigation("Diet");
+
+                    b.Navigation("Pilates");
+                });
+
+            modelBuilder.Entity("CoreLayer.Models.PilatesModels.Pilates", b =>
+                {
+                    b.Navigation("PilatesWeeklies");
                 });
 #pragma warning restore 612, 618
         }

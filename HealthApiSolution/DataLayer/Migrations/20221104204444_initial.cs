@@ -54,22 +54,6 @@ namespace DataLayer.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Categories",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UpdateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    SoftDeleted = table.Column<bool>(type: "bit", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Categories", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "AspNetRoleClaims",
                 columns: table => new
                 {
@@ -176,57 +160,225 @@ namespace DataLayer.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "FavoriteMovies",
+                name: "BodyInfo",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Age = table.Column<int>(type: "int", nullable: false),
+                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: true),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     SoftDeleted = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_FavoriteMovies", x => x.Id);
+                    table.PrimaryKey("PK_BodyInfo", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_FavoriteMovies_AspNetUsers_UserId",
+                        name: "FK_BodyInfo_AspNetUsers_UserId",
                         column: x => x.UserId,
                         principalTable: "AspNetUsers",
+                        principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "BuyingReport",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: true),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    TotalPrice = table.Column<float>(type: "real", nullable: false),
+                    PaymentResultType = table.Column<int>(type: "int", nullable: false),
+                    PaymentType = table.Column<int>(type: "int", nullable: false),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UpdateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    SoftDeleted = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_BuyingReport", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_BuyingReport_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Diet",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: true),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UpdateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    SoftDeleted = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Diet", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Diet_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Pilates",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: true),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UpdateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    SoftDeleted = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Pilates", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Pilates_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "AnamnesisForm",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    DietId = table.Column<int>(type: "int", nullable: false),
+                    Question1 = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Question2 = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Question3 = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Question4 = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Question5 = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Question6 = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UpdateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    SoftDeleted = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AnamnesisForm", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_AnamnesisForm_Diet_DietId",
+                        column: x => x.DietId,
+                        principalTable: "Diet",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Movies",
+                name: "DietWeekly",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ImagePath = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CategoryId = table.Column<int>(type: "int", nullable: false),
-                    FavoriteMoviesId = table.Column<int>(type: "int", nullable: true),
+                    Queue = table.Column<int>(type: "int", nullable: false),
+                    IsCompleted = table.Column<bool>(type: "bit", nullable: false),
+                    IsNextItem = table.Column<bool>(type: "bit", nullable: false),
+                    AppointmentDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    DietId = table.Column<int>(type: "int", nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     SoftDeleted = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Movies", x => x.Id);
+                    table.PrimaryKey("PK_DietWeekly", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Movies_Categories_CategoryId",
-                        column: x => x.CategoryId,
-                        principalTable: "Categories",
+                        name: "FK_DietWeekly_Diet_DietId",
+                        column: x => x.DietId,
+                        principalTable: "Diet",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Movies_FavoriteMovies_FavoriteMoviesId",
-                        column: x => x.FavoriteMoviesId,
-                        principalTable: "FavoriteMovies",
-                        principalColumn: "Id");
                 });
+
+            migrationBuilder.CreateTable(
+                name: "PilatesWeekly",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Queue = table.Column<int>(type: "int", nullable: false),
+                    IsCompleted = table.Column<bool>(type: "bit", nullable: false),
+                    IsNextItem = table.Column<bool>(type: "bit", nullable: false),
+                    AppointmentDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    PilatesId = table.Column<int>(type: "int", nullable: false),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UpdateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    SoftDeleted = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_PilatesWeekly", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_PilatesWeekly_Pilates_PilatesId",
+                        column: x => x.PilatesId,
+                        principalTable: "Pilates",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "NutritionSchedule",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    DietWeeklyId = table.Column<int>(type: "int", nullable: false),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UpdateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    SoftDeleted = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_NutritionSchedule", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_NutritionSchedule_DietWeekly_DietWeeklyId",
+                        column: x => x.DietWeeklyId,
+                        principalTable: "DietWeekly",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "NutritionScheduleItem",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    NutritionScheduleId = table.Column<int>(type: "int", nullable: false),
+                    MealTimeType = table.Column<int>(type: "int", nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UpdateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    SoftDeleted = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_NutritionScheduleItem", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_NutritionScheduleItem_NutritionSchedule_NutritionScheduleId",
+                        column: x => x.NutritionScheduleId,
+                        principalTable: "NutritionSchedule",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_AnamnesisForm_DietId",
+                table: "AnamnesisForm",
+                column: "DietId",
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
@@ -268,24 +420,58 @@ namespace DataLayer.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
-                name: "IX_FavoriteMovies_UserId",
-                table: "FavoriteMovies",
+                name: "IX_BodyInfo_UserId",
+                table: "BodyInfo",
                 column: "UserId",
+                unique: true,
+                filter: "[UserId] IS NOT NULL");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_BuyingReport_UserId",
+                table: "BuyingReport",
+                column: "UserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Diet_UserId",
+                table: "Diet",
+                column: "UserId",
+                unique: true,
+                filter: "[UserId] IS NOT NULL");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_DietWeekly_DietId",
+                table: "DietWeekly",
+                column: "DietId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_NutritionSchedule_DietWeeklyId",
+                table: "NutritionSchedule",
+                column: "DietWeeklyId",
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_Movies_CategoryId",
-                table: "Movies",
-                column: "CategoryId");
+                name: "IX_NutritionScheduleItem_NutritionScheduleId",
+                table: "NutritionScheduleItem",
+                column: "NutritionScheduleId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Movies_FavoriteMoviesId",
-                table: "Movies",
-                column: "FavoriteMoviesId");
+                name: "IX_Pilates_UserId",
+                table: "Pilates",
+                column: "UserId",
+                unique: true,
+                filter: "[UserId] IS NOT NULL");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_PilatesWeekly_PilatesId",
+                table: "PilatesWeekly",
+                column: "PilatesId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "AnamnesisForm");
+
             migrationBuilder.DropTable(
                 name: "AspNetRoleClaims");
 
@@ -302,16 +488,31 @@ namespace DataLayer.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "Movies");
+                name: "BodyInfo");
+
+            migrationBuilder.DropTable(
+                name: "BuyingReport");
+
+            migrationBuilder.DropTable(
+                name: "NutritionScheduleItem");
+
+            migrationBuilder.DropTable(
+                name: "PilatesWeekly");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
-                name: "Categories");
+                name: "NutritionSchedule");
 
             migrationBuilder.DropTable(
-                name: "FavoriteMovies");
+                name: "Pilates");
+
+            migrationBuilder.DropTable(
+                name: "DietWeekly");
+
+            migrationBuilder.DropTable(
+                name: "Diet");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");

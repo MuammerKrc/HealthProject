@@ -20,7 +20,7 @@ namespace CoreLayer.Models.IdentityModels
         public string FullName { get; set; }
         public string? RefreshToken { get; set; }
         public DateTime? RefreshTokenEndDate { get; set; }
-        public BuyingReport? BuyingReport { get; set; }
+        public List<BuyingReport> BuyingReports { get; set; } = new();
         public Diet? Diet { get; set; }
         public Pilates? Pilates { get; set; }
         public BodyInfo? BodyInfo { get; set; }
