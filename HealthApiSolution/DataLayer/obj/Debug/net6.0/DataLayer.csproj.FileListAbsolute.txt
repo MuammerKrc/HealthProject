@@ -1,0 +1,12 @@
+F:\ownerProject\HealthProjects\HealthApiSolution\DataLayer\bin\Debug\net6.0\DataLayer.deps.json
+F:\ownerProject\HealthProjects\HealthApiSolution\DataLayer\bin\Debug\net6.0\DataLayer.dll
+F:\ownerProject\HealthProjects\HealthApiSolution\DataLayer\bin\Debug\net6.0\DataLayer.pdb
+F:\ownerProject\HealthProjects\HealthApiSolution\DataLayer\obj\Debug\net6.0\DataLayer.csproj.AssemblyReference.cache
+F:\ownerProject\HealthProjects\HealthApiSolution\DataLayer\obj\Debug\net6.0\DataLayer.GeneratedMSBuildEditorConfig.editorconfig
+F:\ownerProject\HealthProjects\HealthApiSolution\DataLayer\obj\Debug\net6.0\DataLayer.AssemblyInfoInputs.cache
+F:\ownerProject\HealthProjects\HealthApiSolution\DataLayer\obj\Debug\net6.0\DataLayer.AssemblyInfo.cs
+F:\ownerProject\HealthProjects\HealthApiSolution\DataLayer\obj\Debug\net6.0\DataLayer.csproj.CoreCompileInputs.cache
+F:\ownerProject\HealthProjects\HealthApiSolution\DataLayer\obj\Debug\net6.0\DataLayer.dll
+F:\ownerProject\HealthProjects\HealthApiSolution\DataLayer\obj\Debug\net6.0\refint\DataLayer.dll
+F:\ownerProject\HealthProjects\HealthApiSolution\DataLayer\obj\Debug\net6.0\DataLayer.pdb
+F:\ownerProject\HealthProjects\HealthApiSolution\DataLayer\obj\Debug\net6.0\ref\DataLayer.dll
