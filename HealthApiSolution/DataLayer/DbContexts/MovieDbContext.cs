@@ -20,14 +20,12 @@ namespace DataLayer.DbContexts
         {
 
         }
-        public DbSet<Movie> Movies { get; set; }
-        public DbSet<Category> Categories { get; set; }
-        public DbSet<FavoriteMovies> FavoriteMovies { get; set; }
+   
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            builder.Entity<AppUser>().HasOne(i => i.FavoriteMovies).WithOne(i => i.User)
-                .HasForeignKey<FavoriteMovies>(i => i.UserId);
+            //builder.Entity<AppUser>().HasOne(i => i.FavoriteMovies).WithOne(i => i.User)
+            //    .HasForeignKey<FavoriteMovies>(i => i.UserId);
 
             base.OnModelCreating(builder);
         }

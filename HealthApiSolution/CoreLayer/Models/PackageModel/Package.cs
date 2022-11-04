@@ -1,18 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 using CoreLayer.Models.BaseModels;
 
-namespace CoreLayer.Models
+namespace CoreLayer.Models.PackageModel
 {
-    public class Movie : BaseModel<int>
+    public class Package : BaseModel<int>
     {
         public string Title { get; set; }
         public string Description { get; set; }
-        public string ImagePath { get; set; }
-        public int CategoryId { get; set; }
-        public Category Category { get; set; }
+        public List<PackageItem> PackageItems { get; set; } = new();
     }
 }

@@ -39,13 +39,11 @@ namespace DataLayer
             }).AddEntityFrameworkStores<MovieDbContext>().AddDefaultTokenProviders();
 
             //UnitOfWorks
-            services.AddScoped<IUnitOfWork, UnitOfWork>();
+       
 
             //repository registered
             services.AddScoped(typeof(IBaseRepository<,>), typeof(BaseRepository<,>));
-            services.AddScoped<ICategoryRepository, CategoryRepository>();
-            services.AddScoped<IFavoriteMoviesRepository, FavoriteMoviesRepository>();
-            services.AddScoped<IMovieRepository, MovieRepository>();
+       
 
         }
     }

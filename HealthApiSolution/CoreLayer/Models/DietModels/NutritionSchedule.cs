@@ -5,11 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using CoreLayer.Models.BaseModels;
 
-namespace CoreLayer.Models
+namespace CoreLayer.Models.DietModels
 {
-    public class Category : BaseModel<int>
+    public class NutritionSchedule : BaseModel<int>
     {
-        public string Title { get; set; }
-        public ICollection<Movie> Movies { get; set; }
+        public List<NutritionScheduleItem> NutritionScheduleItems { get; set; }
     }
 }

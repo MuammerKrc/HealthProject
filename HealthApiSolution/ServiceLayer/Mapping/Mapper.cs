@@ -14,9 +14,7 @@ namespace ServiceLayer.Mapping
     {
         public Mapper()
         {
-            CreateMap<Category, CategoryDto>().ReverseMap();
-            CreateMap<Movie, MovieDto>().ReverseMap();
-            CreateMap<MovieCreateDto, Movie>().ReverseMap();
+      
         }
     }
 }

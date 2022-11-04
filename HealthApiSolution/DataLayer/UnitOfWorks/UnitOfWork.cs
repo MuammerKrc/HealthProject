@@ -24,16 +24,16 @@ namespace DataLayer.UnitOfWorks
             _context.Dispose();
         }
 
-        private CategoryRepository _categoryRepository;
-        private MovieRepository _movieRepository;
-        private FavoriteMoviesRepository _favoriteMoviesRepository;
+        //private CategoryRepository _categoryRepository;
+        //private MovieRepository _movieRepository;
+        //private FavoriteMoviesRepository _favoriteMoviesRepository;
 
-        public ICategoryRepository CategoryRepository =>
-            _categoryRepository = _categoryRepository ?? new CategoryRepository(_context);
-        public IMovieRepository MovieRepository =>
-            _movieRepository = _movieRepository ?? new MovieRepository(_context);
-        public IFavoriteMoviesRepository FavoriteMoviesRepository =>
-            _favoriteMoviesRepository ?? new FavoriteMoviesRepository(_context);
+        //public ICategoryRepository CategoryRepository =>
+        //    _categoryRepository = _categoryRepository ?? new CategoryRepository(_context);
+        //public IMovieRepository MovieRepository =>
+        //    _movieRepository = _movieRepository ?? new MovieRepository(_context);
+        //public IFavoriteMoviesRepository FavoriteMoviesRepository =>
+        //    _favoriteMoviesRepository ?? new FavoriteMoviesRepository(_context);
         public async Task<int> SaveAsync()
         {
             return await _context.SaveChangesAsync();

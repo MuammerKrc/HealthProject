@@ -3,7 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CoreLayer.Models.AnamnesisFormModels;
+using CoreLayer.Models.BodyInfoModels;
+using CoreLayer.Models.BuyingReportsModel;
+using CoreLayer.Models.DietModels;
 using CoreLayer.Models.JwtModels;
+using CoreLayer.Models.PilatesModels;
 using Microsoft.AspNetCore.Identity;
 
 namespace CoreLayer.Models.IdentityModels
@@ -13,8 +18,11 @@ namespace CoreLayer.Models.IdentityModels
         public string Name { get; set; }
         public string Surname { get; set; }
         public string FullName { get; set; }
-        public FavoriteMovies FavoriteMovies { get; set; }
         public string? RefreshToken { get; set; }
         public DateTime? RefreshTokenEndDate { get; set; }
+        public BuyingReport? BuyingReport { get; set; }
+        public Diet? Diet { get; set; }
+        public Pilates? Pilates { get; set; }
+        public BodyInfo? BodyInfo { get; set; }
     }
 }

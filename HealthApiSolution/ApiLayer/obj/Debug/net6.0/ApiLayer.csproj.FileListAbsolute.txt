@@ -70,3 +70,6 @@ F:\ownerProject\HealthProjects\HealthApiSolution\ApiLayer\bin\Debug\net6.0\Servi
 F:\ownerProject\HealthProjects\HealthApiSolution\ApiLayer\bin\Debug\net6.0\CoreLayer.pdb
 F:\ownerProject\HealthProjects\HealthApiSolution\ApiLayer\bin\Debug\net6.0\DataLayer.pdb
 F:\ownerProject\HealthProjects\HealthApiSolution\ApiLayer\bin\Debug\net6.0\ServiceLayer.pdb
+F:\ownerProject\HealthProjects\HealthApiSolution\ApiLayer\bin\Debug\net6.0\Humanizer.dll
+F:\ownerProject\HealthProjects\HealthApiSolution\ApiLayer\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+F:\ownerProject\HealthProjects\HealthApiSolution\ApiLayer\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll

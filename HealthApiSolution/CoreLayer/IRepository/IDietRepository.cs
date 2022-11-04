@@ -5,10 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using CoreLayer.IRepositories.IBaseRepositories;
 using CoreLayer.Models;
+using CoreLayer.Models.DietModels;
 
 namespace CoreLayer.IRepositories
 {
-    public interface IFavoriteMoviesRepository : IBaseRepository<FavoriteMovies, int>
+    public interface IDietRepository : IBaseRepository<Diet, int>
     {
+
     }
 }
