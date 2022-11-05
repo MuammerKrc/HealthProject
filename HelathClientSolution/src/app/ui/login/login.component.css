@@ -1,0 +1,89 @@
+.login {
+  display: flex;
+  flex-direction: column;
+  padding-top: 12rem;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 2rem;
+  width: 20rem;
+  height: 24rem;
+  background: var(--color-background);
+}
+
+.login-title h2 {
+  font-size: 1.26rem;
+  font-weight: 600;
+  color: var(--color-info-dark);
+}
+
+.login-title h2 span {
+  color: var(--color-danger);
+  font-weight: 800;
+}
+
+.input-group {
+  margin-top: -20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.input input {
+  background-color: var(--color-primary);
+  padding: 0.8rem 1rem;
+  color: #fff;
+  border: none;
+  outline: 20px 20px 0 0;
+}
+
+.input input:focus {
+  background-color: var(--color-danger);
+}
+
+.input input::placeholder {
+  color: var(--color-info-dark);
+}
+
+.input label {
+  margin-bottom: 5px;
+}
+
+.login button {
+  background-color: var(--color-danger);
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+
+}
+
+.input-footer {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input-footer {
+  color: var(--color-info-dark);
+}
+
+.input-footer span {
+
+  font-weight: 600;
+}

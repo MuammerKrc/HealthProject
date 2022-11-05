@@ -1,1 +1,512 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Open+Sans:wght@400;500;700&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    --color-primary: #7380ec;
+    --color-primary-variant: #111e88;
+    --color-success: #41f1b6;
+    --color-warning: #ffbb55;
+    --color-danger: #ff7782;
+    --color-danger-variant: Orgba(247, 88, 66, 0.4);
+    --color-white: #fff;
+    --color-light: rgba(132, 139, 200, 0.18);
+    --color-info-dark: #7d8da1;
+    --color-info-light: #dce1eb;
+    --color-dark: #363949;
+    --color-background: #f6f6f9;
+
+    --color-bg: #1f2641;
+    --color-bg1: #2e3267;
+    --color-bg2: #424890;
+
+    --container-width-lg: 80%;
+    --container-width-md: 90%;
+    --container-width-sm: 94%;
+
+    --card-border-radius: 2rem;
+    --border-radius-1: 0.4rem;
+    --border-radius-2: 0.8rem;
+    --border-radius-3: 1.2rem;
+
+    --card-padding: 1.8rem;
+    --padding-1: 1.2rem;
+
+    --box-shadow: 0 2rem 3rem var(--color-light);
+    --box-shadow2:0 2rem 3rem rgba(132, 139, 200, 0.30);
+    --transition: all 300ms ease-in-out;
+    --font-family1: 'Montserrat', sans-serif;
+    --font-family2: 'Open Sans', sans-serif;
+    --font-family3: 'Poppins', sans-serif;
+}
+
+* {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    outline: 0;
+    text-decoration: none;
+    font-family: var(--font-family3);
+}
+
+.custom-muted {
+    font-size: 0.7rem;
+    color: var(--color-info-dark);
+}
+
+.box-shadow-effect {
+    box-shadow: var(--box-shadow);
+    transition: all 150ms ease-in-out;
+}
+
+.box-shadow-effect:hover {
+    box-shadow: none;
+}
+.box-shadow-effect2 {
+  box-shadow: var(--box-shadow);
+  transition: all 300ms ease-in-out;
+}
+
+.box-shadow-effect2:hover {
+  box-shadow:var(--box-shadow2)
+}
+
+h1 {
+    font-weight: 800;
+    font-size: 1.8rem;
+}
+
+h2 {
+    font-size: 1.4rem;
+}
+
+h3 {
+    font-size: 0.87rem;
+}
+
+h4 {
+    font-size: 0.8rem;
+}
+
+h5 {
+    font-size: 0.77rem;
+}
+
+p {
+    font-size: 0.7rem;
+}
+
+a {
+    color: var(--color-info-dark);
+    text-decoration: none;
+}
+
+.mydanger {
+    color: var(--color-danger);
+}
+
+.myprimary {
+    color: var(--color-primary);
+}
+
+.mysuccess {
+    color: var(--color-success);
+}
+
+.mywarning {
+    color: var(--color-warning);
+}
+
+body {
+    width: 100%;
+    box-sizing: border-box;
+    height: 100%;
+    background-color: var(--color-background);
+    position: relative;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    background-color: var(--color-background);
+    top: 100;
+    left: 0;
+    right: 0;
+    align-items: center;
+    padding: 0 2rem;
+    height: 3.5rem;
+    box-shadow: 0 7.5px 7.5px rgba(132, 139, 200, 0.06);
+    z-index: 999;
+}
+
+nav .left h2 {
+    font-size: 1.26rem;
+    font-weight: 600;
+}
+
+nav .left h2 span {
+    color: var(--color-danger);
+    font-weight: 800;
+}
+
+nav .right .profile {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+nav .right .profile .info {
+    display: flex;
+    flex-direction: column;
+}
+
+nav .right .profile .info p {
+    font-size: 0.77rem;
+}
+
+nav .right .profile .info p span {
+    font-weight: bold;
+}
+
+nav .right .profile .info .muted {
+    align-self: flex-end;
+    font-size: 0.7rem;
+    color: var(--color-info-dark);
+}
+
+nav img {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+}
+
+/* navbar */
+/* aside */
+aside {
+    position: fixed;
+    top: 3.5rem;
+    bottom: 0;
+    left: 0;
+    background-color: var(--color-background);
+    box-shadow: 7.5px 0 7.5px rgba(132, 139, 200, 0.06);
+    /* width: 80px; */
+    width: 18rem;
+    overflow-x: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+aside.active {
+    width: 80px;
+}
+
+aside .aside-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1.7rem;
+    margin-top: 2.5rem;
+}
+
+aside .aside-items a {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    margin-left: 2rem;
+    transition: all 0.3s ease-in-out;
+}
+
+aside .aside-items a.active {
+    background-color: var(--color-light);
+    padding: 15px;
+    color: var(--color-primary);
+    border-left: 7.5px solid var(--color-primary);
+}
+
+aside.active .aside-items a.active {
+    padding-left: 5px;
+}
+
+aside .aside-items a:hover {
+    color: var(--color-primary);
+    margin-left: 2.2rem;
+}
+
+aside .aside-items a h3 {
+    margin-left: 1.3rem;
+}
+
+aside .aside-items a span.icon {
+    font-size: 1.8rem;
+}
+
+aside .aside-items a span.message-count {
+    padding: 2px 8px;
+    margin-left: 5px;
+    background-color: var(--color-danger);
+    font-size: 0.7rem;
+    border-radius: 2px 8px;
+    color: #fff;
+}
+
+aside .close-toggle {
+    content: '';
+    position: absolute;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    bottom: 20px;
+    right: 15px;
+    border-radius: 50%;
+    background-color: var(--color-background);
+    box-shadow: 0 0 10px rgba(132, 139, 200, 0.2);
+}
+
+aside .close-toggle::after {
+    content: '';
+    position: absolute;
+    width: 55%;
+    height: 3px;
+    background-color: var(--color-primary);
+    transform: translateY(-5px);
+    transition: 0.5s;
+}
+
+aside .close-toggle::before {
+    content: '';
+    position: absolute;
+    width: 55%;
+    height: 3px;
+    background-color: var(--color-primary);
+    transform: translateY(5px);
+    transition: 0.5s;
+}
+
+aside.active .close-toggle::before {
+    transform: rotate(215deg);
+    width: 50%;
+}
+
+aside.active .close-toggle::after {
+    transform: rotate(-215deg);
+    width: 50%;
+}
+
+/* aside */
+
+/* main content */
+.main-contents {
+    padding-top: 3.5rem;
+    padding-left: 300px;
+    width: calc(100%-18rem);
+    display: flex;
+    /* flex-wrap: wrap-reverse; */
+    transition: all 0.3s ease-in-out;
+}
+
+.main-contents.active {
+    padding-left: 80px;
+    width: calc(100%-80px);
+}
+
+.main-contents .main-left {
+    min-width: 400px;
+    width: 100%;
+    padding: 2rem;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.main-contents .main-left .title h2 {
+    margin-bottom: 2rem;
+}
+
+.main-contents .main-right {
+    width: 400px;
+    min-width: 400px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-contents .main-left .left-container {
+    display: flex;
+    gap: 3rem;
+    margin-bottom: 5rem;
+}
+
+.main-contents .main-right .right-container {
+    display: flex;
+    gap: 3rem;
+    margin-bottom: 5rem;
+}
+
+/* main content */
+
+.insights {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    width: 100%;
+}
+
+.insights>div {
+    background-color: var(--color-white);
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+    margin-top: 1rem;
+    width: 17.5rem;
+}
+
+.insights>div span {
+    background: var(--color-primary);
+    padding: 0.5rem;
+    border-radius: 50%;
+    color: var(--color-white);
+    font-size: 2rem;
+}
+
+.insights>div.expenses span {
+    background-color: var(--color-danger);
+
+}
+
+.insights>div.income span {
+    background-color: var(--color-success);
+}
+
+.insights>div .middle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.insights h3 {
+    margin: 1rem 0 0.6rem;
+    font-size: 1rem;
+}
+
+.insights .progress {
+    position: relative;
+    width: 92px;
+    height: 92px;
+}
+
+.insights svg {
+    width: 7rem;
+    height: 7rem;
+}
+
+.insights svg circle {
+    fill: none;
+    stroke-width: 14;
+    stroke: var(--color-primary);
+    stroke-linecap: round;
+    transform: translate(5px, 5px);
+    stroke-dasharray: 110;
+    stroke-dashoffset: 92;
+}
+
+.insights .sales svg circle {
+    stroke-dashoffset: -30;
+    stroke-dasharray: 200;
+}
+
+.insights .expenses svg circle {
+    stroke-dashoffset: 20;
+    stroke-dasharray: 80;
+}
+
+.insights .income svg circle {
+    stroke-dashoffset: 35;
+    stroke-dasharray: 110;
+}
+
+.insights .progress .number {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.insights small {
+    margin-top: 1.3rem;
+    display: block;
+}
+
+/* insights */
+/* recent-orders */
+.recent-orders {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.recent-orders table {
+    background: var(--color-white);
+    min-width: 40rem;
+    width: 100%;
+    border-radius: var(--card-border-radius);
+    padding: var(--card-padding);
+    text-align: center;
+    box-shadow: var(--box-shadow);
+}
+
+.recent-orders table tbody td {
+    height: 2.8rem;
+    border-bottom: 1px solid var(--color-light);
+    color: var(--color-dark-variant);
+}
+
+.recent-orders table tbody tr:last-child td {
+    border: none;
+}
+
+.recent-orders a {
+    text-align: center;
+    display: block;
+    margin: 1rem auto;
+    color: var(--color-primary);
+}
+
+/* recent-orders */
+.recent-updates {
+    width: 100%;
+}
+
+.recent-updates h2 {
+    margin-bottom: 0.4rem;
+}
+
+.recent-updates .updates {
+    /* display: flex;
+    justify-content: space-between;
+    align-items: center; */
+    background: var(--color-white);
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+    gap: 2rem;
+    font-size: 0.8rem;
+}
+
+.recent-updates .updates .update {
+    display: flex;
+    gap: 0.7rem;
+}
+
+.recent-updates .updates .update img {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+
+.recent-updates .updates .update small {
+    font-size: 0.5rem;
+}

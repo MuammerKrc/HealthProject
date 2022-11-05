@@ -1,0 +1,66 @@
+<aside [ngClass]="{'active':expanded}">
+  <div class="aside-items" >
+    <a href="#">
+      <span class="icon material-symbols-sharp">
+        grid_view
+      </span>
+      <h3>Dashboard</h3>
+    </a>
+    <a href="#">
+      <span class="icon material-symbols-sharp">
+        group
+      </span>
+      <h3>Müşteriler</h3>
+    </a>
+    <a href="#" class="active">
+      <span class="icon material-symbols-sharp">
+        message
+      </span>
+      <h3>Mesajlar</h3>
+      <span class="message-count">12</span>
+    </a>
+    <a href="#">
+      <span class="icon material-symbols-sharp">
+        monitor_weight
+      </span>
+      <h3>Diyet</h3>
+    </a>
+    <a href="#">
+      <span class="icon material-symbols-sharp">
+        fitness_center
+      </span>
+      <h3>Pilates</h3>
+    </a>
+    <a href="#">
+      <span class="icon material-symbols-sharp">
+        calendar_month
+      </span>
+      <h3>Calışma Vakti</h3>
+    </a>
+    <a href="#">
+      <span class="icon material-symbols-sharp">
+        receipt_long
+      </span>
+      <h3>Tarifler</h3>
+    </a>
+    <a href="#">
+      <span class="icon material-symbols-sharp">
+        receipt_long
+      </span>
+      <h3>Detokslar</h3>
+    </a>
+    <a href="#">
+      <span class="icon material-symbols-sharp">
+        receipt_long
+      </span>
+      <h3>Yazılan Diyetler</h3>
+    </a>
+    <a id="cls" href="#">
+      <span class="icon material-symbols-sharp">
+        logout
+      </span>
+      <h3>Çıkış yap</h3>
+    </a>
+  </div>
+  <div class="close-toggle" (click)="toogleSidebar()"></div>
+</aside>

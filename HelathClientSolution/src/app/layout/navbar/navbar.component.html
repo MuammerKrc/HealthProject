@@ -1,42 +1,16 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary ">
-  <a class="navbar-brand text-white" routerLink="">Movie App</a>
-  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav " style="width: 100%;">
-      <li class="nav-item active">
-        <a class="nav-link active " routerLink="">Movies</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link active" aria-current="page" routerLink="./admin">Admin Page</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link active" aria-current="page" routerLink="/register">Register</a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link active " routerLink="/login">Login</a>
-      </li>
-    </ul>
-    <!-- <ng-container *ngIf="isAuthenticated else unAuthorize">
-      <ul class="navbar-nav ml-auto" style="margin-right: 20px;">
-        <li class="nav-item active">
-          <a class="nav-link active" routerLink="#">{{userModel.email}}</a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link active" (click)="logOut()">Logout</a>
-        </li>
-      </ul>
-    </ng-container> -->
+<nav style="position: fixed;" class="navbar">
+  <div class="left">
+    <a href="#">
+      <h2>CADDE <span>FORM</span></h2>
+    </a>
+  </div>
+  <div class="right">
+    <div class="profile">
+      <diV class="info">
+        <p>Merhaba, <span>Sinem</span></p>
+        <small class="muted">Admin</small>
+      </diV>
+      <img class="user-img" src="/assets/profile-1.jpg" alt="">
+    </div>
   </div>
 </nav>
-
-<ng-template #unAuthorize>
-  <ul class="navbar-nav ml-auto" style="margin-right: 20px;">
-    <li class="nav-item active">
-      <a class="nav-link active" routerLink="/auth">Login</a>
-    </li>
-  </ul>
-</ng-template>
-
