@@ -14,8 +14,8 @@ export class CustomToastService {
   }
 }
 export class CustomToastrOptions {
-  messageType: ToastrMessageType=ToastrMessageType.Success;
-  position: ToastrPosition=ToastrPosition.TopRight
+  messageType: ToastrMessageType = ToastrMessageType.Success;
+  position: ToastrPosition = ToastrPosition.TopRight
 }
 
 export enum ToastrMessageType {

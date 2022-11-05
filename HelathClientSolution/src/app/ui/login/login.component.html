@@ -2,21 +2,24 @@
   <div class="login-content box-shadow-effect2">
     <div class="login-title">
       <h2>Cadde <span>Form</span></h2>
+      <br>
+      <h4>Giriş Yap</h4>
     </div>
-    <div class="input-group">
-      <div class="input">
-        <label>Email</label>
-        <input type="email" placeholder="Email adresi">
+    <form [formGroup]="loginForm">
+      <div class="input-group">
+        <div class="input">
+          <label>Email</label>
+          <input type="email" placeholder="Email adresi" formControlName="email">
+        </div>
+        <div class="input">
+          <label>Şifre</label>
+          <input type="password" placeholder="Şifre" formControlName="password">
+        </div>
       </div>
-      <div class="input">
-        <label>Şifre</label>
-        <input type="password" placeholder="Şifre">
-      </div>
-    </div>
-      <button type="button">Giriş Yap</button>
+      <button (click)="loginClick()" type="button">Giriş Yap</button>
+    </form>
     <div class="input-footer">
       <p><span>Karaca</span> Software</p>
     </div>
   </div>
-
 </div>

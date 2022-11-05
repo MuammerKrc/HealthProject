@@ -1,7 +1,7 @@
 export class BaseModel<T>
 {
-  isSuccess: boolean=false;
-  data: Array<T>;
-  errors: string[]=[];
+  isSuccess: boolean = false;
+  data: T;
+  errors: string[] = [];
 }
 

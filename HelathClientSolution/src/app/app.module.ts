@@ -22,7 +22,7 @@ import { UiModule } from './ui/ui.module';
     HttpClientModule,
   ],
   providers: [
-    { provide: "baseApiUrl", useValue: "https://localhost:7094/api", multi: true }
+    { provide: "baseUrl", useValue: "https://localhost:7152/api/", multi: true }
   ],
   bootstrap: [AppComponent]
 })

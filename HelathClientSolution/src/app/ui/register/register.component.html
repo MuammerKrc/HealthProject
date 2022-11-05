@@ -1,1 +1,33 @@
-<p>register works!</p>
+<div class="login">
+  <div class="login-content box-shadow-effect2">
+    <div class="login-title">
+      <h2>Cadde <span>Form</span></h2>
+      <br>
+      <h4>Kayıt Ol</h4>
+    </div>
+    <form [formGroup]="registerForm">
+      <div class="input-group">
+        <div class="input">
+          <label>Ad</label>
+          <input type="text" placeholder="Adınız:" formControlName="name">
+        </div>
+        <div class="input">
+          <label>Soyad</label>
+          <input type="text" placeholder="Soyadınız:" formControlName="surname">
+        </div>
+        <div class="input">
+          <label>Email</label>
+          <input type="email" placeholder="Email adresi" formControlName="email">
+        </div>
+        <div class="input">
+          <label>Şifre</label>
+          <input type="password" placeholder="Şifre" formControlName="password">
+        </div>
+      </div>
+      <button [disabled]="!registerForm.valid" (click)="registerClick()" type="button">Kayıt Ol</button>
+    </form>
+    <div class="input-footer">
+      <p><span>Karaca</span> Software</p>
+    </div>
+  </div>
+</div>

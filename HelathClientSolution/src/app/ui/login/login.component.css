@@ -1,20 +1,19 @@
 .login {
   display: flex;
   flex-direction: column;
-  padding-top: 12rem;
   align-items: center;
   height: 100vh;
 }
-
 .login-content {
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  padding: 2rem;
+  padding: 3rem;
+  border-radius: 20px;
   width: 20rem;
-  height: 24rem;
   background: var(--color-background);
+  height: 25rem;
 }
 
 .login-title h2 {
@@ -26,6 +25,12 @@
 .login-title h2 span {
   color: var(--color-danger);
   font-weight: 800;
+}
+
+.login-title h4 {
+  font-size: 1.10rem;
+  font-weight: 600;
+  color: var(--color-info-dark);
 }
 
 .input-group {
@@ -41,14 +46,17 @@
 }
 
 .input input {
-  background-color: var(--color-primary);
+  background-color: rgb(232, 240,254);
   padding: 0.8rem 1rem;
-  color: #fff;
+  color: black;
   border: none;
   outline: 20px 20px 0 0;
+  border-radius: 5px;
+  transition: all 300ms ease-in-out;
 }
 
 .input input:focus {
+  color:#fff ;
   background-color: var(--color-danger);
 }
 
@@ -58,15 +66,21 @@
 
 .input label {
   margin-bottom: 5px;
+  color: var(--color-info-dark);
+
 }
 
 .login button {
   background-color: var(--color-danger);
   padding: 10px;
   border: none;
+  margin-top: 20px;
+  width: 40%;
   border-radius: 5px;
+  font-size: 0.9rem;
+  font-weight: 600;
   color: #fff;
-
+  cursor: pointer;
 }
 
 .input-footer {
@@ -84,6 +98,5 @@
 }
 
 .input-footer span {
-
   font-weight: 600;
 }
