@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CoreLayer.Dtos.FavoriteMoviesDtos;
 
 namespace CoreLayer.Dtos.IdentityDtos
 {
@@ -16,6 +15,5 @@ namespace CoreLayer.Dtos.IdentityDtos
         public string Name { get; set; }
         public string UserName { get; set; }
         public string FullName { get; set; }
-        public FavoriteMoviesDto FavoriteMovies { get; set; }
     }
 }
