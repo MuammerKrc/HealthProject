@@ -31,7 +31,7 @@
     --padding-1: 1.2rem;
 
     --box-shadow: 0 2rem 3rem var(--color-light);
-    --box-shadow2:0 2rem 3rem rgba(132, 139, 200, 0.30);
+    --box-shadow2:0 2rem 3rem rgba(132, 139, 200, 0.40);
     --transition: all 300ms ease-in-out;
     --font-family1: 'Montserrat', sans-serif;
     --font-family2: 'Open Sans', sans-serif;

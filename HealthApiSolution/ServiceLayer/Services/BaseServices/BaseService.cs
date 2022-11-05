@@ -17,13 +17,14 @@ namespace ServiceLayer.Services.BaseServices
         IBaseRepository<TModel, TKey> _repository;
         IMapper _mapper;
 
-        public BaseService(IBaseRepository<TModel, TKey> baseRepository, IMapper mapper)
+
+        public BaseService(IBaseRepository<TModel, TKey> repository, IMapper mapper)
         {
-            _repository = baseRepository;
+            _repository = repository;
             _mapper = mapper;
         }
 
-        public async Task<Response<NoResponse>> CreateAsync(TDto dto)
+        public   async Task<Response<NoResponse>> CreateAsync(TDto dto)
         {
             var model = _mapper.Map<TModel>(dto);
             _repository.Add(model);
@@ -31,25 +32,23 @@ namespace ServiceLayer.Services.BaseServices
             return Response<NoResponse>.SuccessResponse();
         }
 
-        public async Task<Response<NoResponse>> DeleteAsync(TKey id)
+        public  async Task<Response<NoResponse>> DeleteAsync(TKey id)
         {
             await _repository.Delete(id);
             await _repository.SaveAsync();
             return Response<NoResponse>.SuccessResponse();
         }
 
-        public async Task<Response<List<TDto>>> GetAllAsync()
+        public  async Task<Response<List<TDto>>> GetAllAsync()
         {
             var result = await _repository.GetAllAsync();
             return Response<List<TDto>>.SuccessResponse(_mapper.Map<List<TDto>>(result));
         }
 
-        public async Task<Response<TDto>> GetByIdAsync(TKey id)
+        public  async Task<Response<TDto>> GetByIdAsync(TKey id)
         {
             var result = await _repository.GetByIdAsync(id);
             return Response<TDto>.SuccessResponse(_mapper.Map<TDto>(result));
         }
-
-        
     }
 }
