@@ -8,9 +8,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LayoutModule } from './layout/layout.module';
 import { UiModule } from './ui/ui.module';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
@@ -18,7 +19,6 @@ import { UiModule } from './ui/ui.module';
     ToastrModule.forRoot(),
     AppRoutingModule,
     UiModule,
-    LayoutModule,
     HttpClientModule,
   ],
   providers: [

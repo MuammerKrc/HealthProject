@@ -4,6 +4,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { RouterModule } from '@angular/router';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { RightSideComponent } from './right-side/right-side.component';
+import { LayoutComponent } from './layout.component';
 
 
 
@@ -11,7 +12,8 @@ import { RightSideComponent } from './right-side/right-side.component';
   declarations: [
     NavbarComponent,
     SidebarComponent,
-    RightSideComponent
+    RightSideComponent,
+    LayoutComponent
   ],
   imports: [
     CommonModule,

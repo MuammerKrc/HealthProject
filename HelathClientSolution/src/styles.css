@@ -98,6 +98,35 @@ a {
     color: var(--color-info-dark);
     text-decoration: none;
 }
+.make-flex{
+  display: flex;
+}
+.make-flex-column{
+  display: flex;
+  flex-direction: column;
+}
+.make-flex-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.make-flex-column-center{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.make-flex-space{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.make-flex-column-space{
+  display: flex;
+  flex-direction:column;
+  justify-content: space-between;
+  align-items: center;
+}
 
 .mydanger {
     color: var(--color-danger);
