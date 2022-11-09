@@ -78,6 +78,9 @@
   gap: 30px;
   /* border-radius: 30px; */
 }
+.xpackage.pilates{
+  border-left: 10px solid var(--color-warning);
+}
 
 .xpackage .package-desc {
   width: 220px;
@@ -90,6 +93,9 @@
   width: 50px;
   height: 50px;
   margin-bottom: 20px;
+}
+.xpackage .package-desc-title-out.pilates {
+  background-color: var(--color-warning);
 }
 
 .xpackage .package-desc-title {
@@ -153,7 +159,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px
+  gap: 10px;
 }
 
 .xpackage .week-title i {
@@ -173,9 +179,11 @@
   font-weight: 600;
   flex-direction: column;
 }
-.xpackage .week-content i{
+
+.xpackage .week-content i {
   font-size: 30px;
 }
+
 .xpackage .week-content span {
   display: flex;
   align-items: center;
@@ -188,10 +196,83 @@
 .xpackage .week-content span.active {
   background-color: var(--color-success);
 }
-.xpackage .week-content span.pass{
+
+.xpackage .week-content span.pass {
   background-color: var(--color-warning);
 }
 
-.xpackage .week-content span.not{
-background-color: var(--color-info-dark);
+.xpackage .week-content span.not {
+  background-color: var(--color-info-dark);
+}
+
+.xpackage .package-content {
+  width: 100%;
+}
+
+.xpackage .package-content-right {
+  display: flex;
+  gap: 50px;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+
+}
+
+.xpackage .package-content-right .right-content {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.xpackage .package-content-right .right-content h3 {
+  color: var(--color-info-dark);
+  font-size: 1rem;
+}
+
+
+.xpackage .package-content-right .right-content button {
+  padding: 10px 20px;
+  border: none;
+  background-color: var(--color-primary);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #fff;
+  border-radius: 10px;
+  transition: all 350ms ease-in-out;
+}
+.xpackage .package-content-right .right-content .right-content-top {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.xpackage .package-content-right .right-content button:hover {
+  color: var(--color-primary);
+  background-color: var(--color-light);
+  box-shadow: var(--box-shadow2);
+}
+.xpackage .package-content-right .right-content .randevu {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+
+.xpackage .package-content-right .right-content .randevu h4 {
+  background-color: var(--color-light);
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: var(--color-primary);
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.xpackage .package-content-right .right-content .randevu h4 span {
+  font-weight: 700;
+}
+.xpackage .package-content-right .right-content .right-diet{
+  display: flex;
+  gap:40px;
+  align-items: center;
 }
