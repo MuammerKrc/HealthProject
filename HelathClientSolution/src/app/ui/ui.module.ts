@@ -1,10 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeModule } from './home/home.module';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
 import { RegisterModule } from './register/register.module';
 import { LoginModule } from './login/login.module';
+import { UserInfoModule } from './user-info/user-info.module';
 
 
 
@@ -16,7 +15,8 @@ import { LoginModule } from './login/login.module';
     CommonModule,
     HomeModule,
     RegisterModule,
-    LoginModule
+    LoginModule,
+    UserInfoModule
   ]
 })
 export class UiModule { }

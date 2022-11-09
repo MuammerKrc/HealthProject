@@ -363,6 +363,8 @@ aside.active .close-toggle::after {
     display: flex;
     gap: 3rem;
     margin-bottom: 5rem;
+    width: 100%;
+    
 }
 
 .main-contents .main-right .right-container {
