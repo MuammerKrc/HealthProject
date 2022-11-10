@@ -4,6 +4,7 @@ import { HomeModule } from './home/home.module';
 import { RegisterModule } from './register/register.module';
 import { LoginModule } from './login/login.module';
 import { UserInfoModule } from './user-info/user-info.module';
+import { WriteDietModule } from './write-diet/write-diet.module';
 
 
 
@@ -16,7 +17,8 @@ import { UserInfoModule } from './user-info/user-info.module';
     HomeModule,
     RegisterModule,
     LoginModule,
-    UserInfoModule
+    UserInfoModule,
+    WriteDietModule
   ]
 })
 export class UiModule { }
