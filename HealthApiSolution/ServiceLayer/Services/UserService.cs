@@ -22,7 +22,7 @@ namespace ServiceLayer.Services
             _userManager = userManager;
         }
 
-        public async Task<Response<NoResponse>> CreateAsync(CreateUserDto model)
+        public async Task<NoResponse> CreateAsync(CreateUserDto model)
         {
             try
             {
@@ -36,9 +36,10 @@ namespace ServiceLayer.Services
                     UserName = Guid.NewGuid().ToString()
                 }, model.Password);
 
-                if (!result.Succeeded)
-                    return Response<NoResponse>.ErrorResponse(result.Errors.Select(i => i.Description).ToList());
-                return Response<NoResponse>.SuccessResponse(message: "Kullanıcı başarı ile oluşturuldu");
+                //if (!result.Succeeded)
+                //    return Response<NoResponse>.ErrorResponse(result.Errors.Select(i => i.Description).ToList());
+                //return Response<NoResponse>.SuccessResponse(message: "Kullanıcı başarı ile oluşturuldu");
+                return new NoResponse();
             }
             catch (Exception e)
             {

@@ -12,6 +12,6 @@ namespace CoreLayer.IServices
 {
     public interface ITokenService
     {
-        Response<TokenDto> CreateAccessToken(AppUser appUser);
+        TokenDto CreateAccessToken(AppUser appUser);
     }
 }

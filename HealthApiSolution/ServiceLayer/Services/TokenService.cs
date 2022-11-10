@@ -34,7 +34,7 @@ namespace ServiceLayer.Services
         {
             return Guid.NewGuid().ToString();
         }
-        public Response<TokenDto> CreateAccessToken(AppUser appUser)
+        public TokenDto CreateAccessToken(AppUser appUser)
         {
             var accessTokenExpiresDate = DateTime.UtcNow.AddSeconds(tokenConfigurationModel.AccessTokenExpirationTime);
             SigningCredentials signingCredential =
@@ -57,9 +57,7 @@ namespace ServiceLayer.Services
                     accessTokenExpiresDate.AddSeconds(tokenConfigurationModel.RefreshTokenExpirationTime),
                 RefresToken = GetRefreshToken()
             };
-            return Response<TokenDto>.SuccessResponse(tokenDto);
+            return tokenDto;
         }
-
-
     }
 }

@@ -11,7 +11,7 @@ namespace CoreLayer.IServices
 {
     public interface IUserService
     {
-        Task<Response<NoResponse>> CreateAsync(CreateUserDto model);
+        Task<NoResponse> CreateAsync(CreateUserDto model);
         Task UpdateRefreshTokenAsync(string refreshToken, AppUser user, DateTime refreshTokenExpiration);
         Task UpdatePasswordAsync(string userId, string resetToken, string newPassword);
     }

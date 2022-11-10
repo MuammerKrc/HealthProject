@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreLayer", "CoreLayer\CoreLayer.csproj", "{C27E5E78-A451-4A12-B07A-16DEB60D38BB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreLayer", "CoreLayer\CoreLayer.csproj", "{C27E5E78-A451-4A12-B07A-16DEB60D38BB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataLayer", "DataLayer\DataLayer.csproj", "{C346DF9C-743B-4A55-AC08-D6D90F852AEF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataLayer", "DataLayer\DataLayer.csproj", "{C346DF9C-743B-4A55-AC08-D6D90F852AEF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiLayer", "ApiLayer\ApiLayer.csproj", "{672D5068-A436-46AA-B208-E1A3CB274499}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiLayer", "ApiLayer\ApiLayer.csproj", "{672D5068-A436-46AA-B208-E1A3CB274499}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceLayer", "ServiceLayer\ServiceLayer.csproj", "{2F1E6C0C-4BE0-42BF-8AE8-040BDEEFAADB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceLayer", "ServiceLayer\ServiceLayer.csproj", "{2F1E6C0C-4BE0-42BF-8AE8-040BDEEFAADB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebLayer", "WebLayer\WebLayer.csproj", "{A5B90C98-4CF3-4186-A226-52E3F0764573}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{2F1E6C0C-4BE0-42BF-8AE8-040BDEEFAADB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2F1E6C0C-4BE0-42BF-8AE8-040BDEEFAADB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2F1E6C0C-4BE0-42BF-8AE8-040BDEEFAADB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5B90C98-4CF3-4186-A226-52E3F0764573}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5B90C98-4CF3-4186-A226-52E3F0764573}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5B90C98-4CF3-4186-A226-52E3F0764573}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5B90C98-4CF3-4186-A226-52E3F0764573}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

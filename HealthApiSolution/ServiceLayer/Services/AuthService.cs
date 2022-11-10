@@ -30,7 +30,7 @@ namespace ServiceLayer.Services
             _userService = userService;
         }
 
-        public async Task<Response<TokenDto>> LoginAsync(LoginDto dto)
+        public async Task<TokenDto> LoginAsync(LoginDto dto)
         {
             var user = await _userManager.FindByEmailAsync(dto.Email);
             if (user == null)
@@ -39,18 +39,18 @@ namespace ServiceLayer.Services
             if (!resultPassword)
                 throw new AuthenticationErrorException();
             var tokenResponse = _tokenService.CreateAccessToken(user);
-            await _userService.UpdateRefreshTokenAsync(tokenResponse.Data.RefresToken, user, tokenResponse.Data.ExpirationRefreshToken);
+            await _userService.UpdateRefreshTokenAsync(tokenResponse.RefresToken, user, tokenResponse.ExpirationRefreshToken);
             return tokenResponse;
         }
 
-        public async Task<Response<TokenDto>> RefreshTokenLoginAsync(string refreshToken)
+        public async Task<TokenDto> RefreshTokenLoginAsync(string refreshToken)
         {
             var user = await _userManager.Users.FirstOrDefaultAsync(e => e.RefreshToken == refreshToken && e.RefreshTokenEndDate > DateTime.UtcNow);
             if (user != null && user?.RefreshTokenEndDate > DateTime.UtcNow)
             {
                 var tokenresponse = _tokenService.CreateAccessToken(user);
-                await _userService.UpdateRefreshTokenAsync(tokenresponse.Data.RefresToken, user,
-                    tokenresponse.Data.ExpirationRefreshToken);
+                await _userService.UpdateRefreshTokenAsync(tokenresponse.RefresToken, user,
+                    tokenresponse.ExpirationRefreshToken);
                 return tokenresponse;
             }
             else

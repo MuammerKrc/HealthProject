@@ -12,7 +12,7 @@ namespace CoreLayer.IServices
 {
     public interface IAuthService
     {
-        Task<Response<TokenDto>> LoginAsync(LoginDto dto);
-        Task<Response<TokenDto>> RefreshTokenLoginAsync(string refreshToken);
+        Task<TokenDto> LoginAsync(LoginDto dto);
+        Task<TokenDto> RefreshTokenLoginAsync(string refreshToken);
     }
 }
