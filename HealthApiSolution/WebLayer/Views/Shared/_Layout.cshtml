@@ -1,62 +1,67 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - WebLayer</title>
-    @*<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />*@
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>@ViewData["Title"] - WebLayer</title>
+	@*<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />*@
+	<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
-    @await RenderSectionAsync("styles", required: false)
+	<link href="~/css/modal.css" rel="stylesheet" />
+	@await RenderSectionAsync("styles", required: false)
 
 </head>
 <body>
-<nav>
-	<div class="conts nav__container">
-		<a href="index.html">
-			<h2>CADDE <span>FORM</span></h2>
-		</a>
-		<ul class="nav__menu">
-			<li><a href="#index.html">Ana Sayfa</a></li>
-			<li><a href="#index.html">Hizmetlerimiz</a></li>
-			<li><a href="#index.html">Paketler</a></li>
-			<li><a href="#index.html">İletişim</a></li>
-		</ul>
-		<button id="open-menu" class=""><i class="fa-solid fa-bars"></i></button>
-		<button id="close-menu"><i class="fa-solid fa-xmark"></i></button>
-	</div>
-</nav>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
+	<nav>
+		<div class="conts nav__container">
+			<a asp-controller="Home" asp-action="Index">
+				<h2>CADDE <span>FORM</span></h2>
+			</a>
 
-<!-- FOOTER -->
-<footer class="footer-section">
-	<div class="conts footer__container">
-		<div class="footer__left">
-			<p class="copyright-text">
-				Copyright &copy; 2020 Cadde Form Co.
-				<br>Designed By: <a href="karacayazilim.com">KaracaDesign</a>
-			</p>
-		</div>
+			<ul class="nav__menu">
+				<li><a href="#index.html">Hizmetlerimiz</a></li>
+				<li><a href="#index.html">Paketler</a></li>
+				<li><a asp-controller="Customer" >Müşteri</a></li>
+				<li><a asp-controller="Account" asp-action="SignIn">Giriş Yap</a></li>
+				<li><a href="#index.html">Kayıt Ol</a></li>
 
-		<div class="footer__right">
-			<p>
-				<i class="fa-solid fa-envelope"></i>
-				<a href="#">muammer03karaca@gmail.com</a>
-			</p>
-			<p><i class="fa fa-phone mr-1"></i> 0552-467-3747</p>
+			</ul>
+			<button id="open-menu" class=""><i class="fa-solid fa-bars"></i></button>
+			<button id="close-menu"><i class="fa-solid fa-xmark"></i></button>
 		</div>
+	</nav>
+	<div class="container">
+		<main role="main" class="pb-3">
+			@RenderBody()
+		</main>
 	</div>
-</footer>
+
+	<!-- FOOTER -->
+	<footer class="footer-section">
+		<div class="conts footer__container">
+			<div class="footer__left">
+				<p class="copyright-text">
+					Copyright &copy; 2020 Cadde Form Co.
+					<br>Designed By: <a href="karacayazilim.com">KaracaDesign</a>
+				</p>
+			</div>
+
+			<div class="footer__right">
+				<p>
+					<i class="fa-solid fa-envelope"></i>
+					<a href="#">muammer03karaca@gmail.com</a>
+				</p>
+				<p><i class="fa fa-phone mr-1"></i> 0552-467-3747</p>
+			</div>
+		</div>
+	</footer>
 	<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+	<script src="~/lib/jquery/dist/jquery.min.js"></script>
 	<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
+	<script src="~/js/modal.js"></script>
+	<script src="~/js/site.js" asp-append-version="true"></script>
+	@await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

@@ -1,0 +1,541 @@
+﻿@{
+	ViewData["Title"] = "Index";
+}
+
+@section styles
+	{
+
+	<link href="\css\customers.css" rel="stylesheet" />
+}
+	<div class="customer-page">
+		<div class="page_left">
+			<section class="welcome-page-section">
+				<div class="conts welcome-page__container">
+					<h2>Hoşgeldiniz Muammer Karaca</h2>
+				</div>
+			</section>
+			<section class="general-page-section">
+				<div class="conts general-page__container">
+					<div class="general-page__left">
+					</div>
+					<div class="general-page__right">
+						<h5>Bugün Harika İndirimlerimiz Var!</h5>
+						<p>
+							Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem incidunt ullam,
+							recusandae
+							cum non nulla !
+						</p>
+					</div>
+				</div>
+			</section>
+			<section class="packages-page-section">
+				<div class="conts packages-page__container">
+					<div class="package diet">
+						<h4>Diet Randevusu</h4>
+						<p>Kalan Diet paketi: <span>5</span></p>
+						<h5>13.11.2021 Salı 13:30 </h5>
+						<i class="fa-solid fa-plate-wheat"></i>
+					</div>
+					<div class="package pilates">
+						<h4>Pilates Randevusu</h4>
+						<p>Kalan pilates paketi: <span>5</span></p>
+						<h5>13.11.2021 Salı 13:30 </h5>
+						<i class="fa-solid fa-dumbbell"></i>
+					</div>
+					<div class="package teacher">
+						<h4>Öğreticiniz</h4>
+						<p>Sizinle ilgilenen kişi</p>
+						<h5>Sinem Karaca</h5>
+						<i class="fa-solid fa-person-walking"></i>
+					</div>
+				</div>
+			</section>
+			<section class="diet-pilates-section">
+				<div class="conts diet-pilates__container">
+					<div class="diet-pilates__left">
+						<div class="diet-plates__top">
+							<i class="fa-solid fa-plate-wheat"></i>
+							<h2>Diyet</h2>
+						</div>
+						<div class="diet-pilates-week-info">
+							<h4>Haftalar</h4>
+							<h5>Seçilen Hafta: <span>5. Hafta</span></h5>
+						</div>
+						<div class="weeks">
+							<a href="#">
+								<i class="fa-solid fa-chevron-left"></i>
+							</a>
+							<div class="previous">...</div>
+							<div class="week past">4</div>
+							<div class="week active">5</div>
+							<div class="week unactive">6</div>
+							<div class="week unactive">7</div>
+							<div class="week unactive">8</div>
+							<div class="next unactive">...</div>
+							<a href="#">
+								<i class="fa-solid fa-chevron-right"></i>
+							</a>
+						</div>
+						<div class="btns-group-diet">
+							<a href="#" class="btn-group-diet">Yazılan Diyet</a>
+							<a id="AnamnezFormModal" data-modal-open href="#" class="btn-group-diet">Anamnez Formu</a>
+						</div>
+						<div class="body-infos-packages">
+							<div class="body-infos-package-row top">
+								<h5>Başlangıç</h5>
+								<h5>Haftalık</h5>
+								<h5>Beklenen</h5>
+							</div>
+							<div class="body-infos-package-row">
+								<div class="icon-body-info">
+									<i class="fa-solid fa-weight-scale"></i>
+									Kilo
+								</div>
+								<p>100</p>
+								<div class="icon-shows up">
+									<i class="fa-solid fa-arrow-trend-up"></i>
+									-5
+								</div>
+
+								<p>95</p>
+								<div class="icon-shows">
+									<i class="fa-solid fa-arrow-trend-down"></i>
+									15
+								</div>
+								<p>80</p>
+							</div>
+							<div class="body-infos-package-row">
+								<div class="icon-body-info">
+									<i class="fa-solid fa-hand-fist"></i>
+									Kas
+								</div>
+								<p>30</p>
+								<div class="icon-shows up">
+									<i class="fa-solid fa-arrow-trend-up"></i>
+									-5
+								</div>
+								<p>25</p>
+								<div class="icon-shows">
+									<i class="fa-solid fa-arrow-trend-down"></i>
+									15
+								</div>
+								<p>20</p>
+							</div>
+							<div class="body-infos-package-row">
+								<div class="icon-body-info">
+									<i class="fa-solid fa-droplet"></i>
+									Yağ
+								</div>
+								<p>30</p>
+								<div class="icon-shows up">
+									<i class="fa-solid fa-arrow-trend-up"></i>
+									-5
+								</div>
+								<p>25</p>
+								<div class="icon-shows">
+									<i class="fa-solid fa-arrow-trend-down"></i>
+									15
+								</div>
+								<p>20</p>
+							</div>
+							<div class="body-infos-package-row">
+								<div class="icon-body-info">
+									<i class="fa-solid fa-heart-pulse"></i>
+									Vücut Yaşı
+								</div>
+								<p>30</p>
+								<div class="icon-shows up">
+									<i class="fa-solid fa-arrow-trend-up"></i>
+									-5
+								</div>
+								<p>25</p>
+								<div class="icon-shows">
+									<i class="fa-solid fa-arrow-trend-down"></i>
+									15
+								</div>
+								<p>20</p>
+							</div>
+							<div class="show-all-body-info">
+								<button>Bütün vücut analizi</button>
+							</div>
+						</div>
+					</div>
+					<div class="diet-pilates__right">
+						<div class="diet-plates__top">
+							<i class="fa-solid fa-plate-wheat"></i>
+							<h2>Diyet</h2>
+						</div>
+						<div class="diet-pilates-week-info">
+							<h4>Haftalar</h4>
+							<h5>Seçilen Hafta: <span>5. Hafta</span></h5>
+						</div>
+						<div class="weeks">
+							<a href="#">
+								<i class="fa-solid fa-chevron-left"></i>
+							</a>
+							<div class="previous">...</div>
+							<div class="week past">4</div>
+							<div class="week active">5</div>
+							<div class="week unactive">6</div>
+							<div class="week unactive">7</div>
+							<div class="week unactive">8</div>
+							<div class="next unactive">...</div>
+							<a href="#">
+								<i class="fa-solid fa-chevron-right"></i>
+							</a>
+						</div>
+						<div class="btns-group-diet">
+							<a href="#" class="btn-group-diet">Yazılan Diyet</a>
+							<a href="#" class="btn-group-diet">Anamnez Formu</a>
+						</div>
+						<div class="body-infos-packages">
+							<div class="body-infos-package-row top">
+								<h5>Başlangıç</h5>
+								<h5>Haftalık</h5>
+								<h5>Beklenen</h5>
+							</div>
+							<div class="body-infos-package-row">
+								<div class="icon-body-info">
+									<i class="fa-solid fa-weight-scale"></i>
+									Kilo
+								</div>
+								<p>100</p>
+								<div class="icon-shows up">
+									<i class="fa-solid fa-arrow-trend-up"></i>
+									-5
+								</div>
+								<p>95</p>
+								<div class="icon-shows">
+									<i class="fa-solid fa-arrow-trend-down"></i>
+									15
+								</div>
+								<p>80</p>
+							</div>
+							<div class="body-infos-package-row">
+								<div class="icon-body-info">
+									<i class="fa-solid fa-hand-fist"></i>
+									Kas
+								</div>
+								<p>30</p>
+								<div class="icon-shows up">
+									<i class="fa-solid fa-arrow-trend-up"></i>
+									-5
+								</div>
+								<p>25</p>
+								<div class="icon-shows">
+									<i class="fa-solid fa-arrow-trend-down"></i>
+									15
+								</div>
+								<p>20</p>
+							</div>
+							<div class="body-infos-package-row">
+								<div class="icon-body-info">
+									<i class="fa-solid fa-droplet"></i>
+									Yağ
+								</div>
+								<p>30</p>
+								<div class="icon-shows up">
+									<i class="fa-solid fa-arrow-trend-up"></i>
+									-5
+								</div>
+								<p>25</p>
+								<div class="icon-shows">
+									<i class="fa-solid fa-arrow-trend-down"></i>
+									15
+								</div>
+								<p>20</p>
+							</div>
+							<div class="body-infos-package-row">
+								<div class="icon-body-info">
+									<i class="fa-solid fa-heart-pulse"></i>
+									Vücut Yaşı
+								</div>
+								<p>30</p>
+								<div class="icon-shows up">
+									<i class="fa-solid fa-arrow-trend-up"></i>
+									-5
+								</div>
+								<p>25</p>
+								<div class="icon-shows">
+									<i class="fa-solid fa-arrow-trend-down"></i>
+									15
+								</div>
+								<p>20</p>
+							</div>
+							<div class="show-all-body-info">
+								<button>Bütün vücut analizi</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+		<div class="page_right">
+			<section class="customer-cheat-section">
+				<div class="containers customer-cheat__container">
+					<div class="customer-cheat_top">
+						<div class="img-container">
+							<img src="images/avatar6.jpg" alt="">
+						</div>
+						<div class="name-spots">
+							<p>Sinem Karaca</p>
+							<i class="fa-solid fa-globe"></i>
+						</div>
+						<div class="icon-spots">
+							<i class="fa-solid fa-phone"></i>
+							<i class="fa-solid fa-video"></i>
+						</div>
+					</div>
+					<div class="customer-cheat_body">
+						<div class="time">
+							<p>3 GÜN ÖNCE</p>
+						</div>
+						<div class="me">
+							<div class="img-containers">
+								<img src="images/avatar5.jpg" alt="">
+							</div>
+							<div class="message">
+								<p>iyiyim daha iyiyim!</p>
+								<p>daha daha nasılsın</p>
+								<p class="message-time">
+									23:30
+								</p>
+							</div>
+						</div>
+						<div class="you">
+							<div class="img-containers">
+								<img src="images/avatar6.jpg" alt="">
+							</div>
+							<div class="message">
+								<p>iyiyim daha iyiyim!</p>
+								<p>Lorem ipsum dolor sit amet consectetur adipi </p>
+								<p class="message-time">
+									23:30
+								</p>
+							</div>
+						</div>
+						<div class="time">
+							<p>BUGÜN</p>
+						</div>
+						<div class="you">
+							<div class="img-containers">
+								<img src="images/avatar6.jpg" alt="">
+							</div>
+							<div class="message">
+								<p>iyiyim daha iyiyim!</p>
+								<p>daha daha nasılsın</p>
+								<p class="message-time">
+									23:30
+								</p>
+							</div>
+						</div>
+						<div class="me">
+							<div class="img-containers">
+								<img src="images/avatar5.jpg" alt="">
+							</div>
+							<div class="message">
+								<p>iyiyim daha iyiyim!</p>
+								<p>daha daha nasılsın</p>
+								<p class="message-time">
+									23:30
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="customer-cheat_bottom">
+						<div class="cheat-icons">
+							<i class="fa-solid fa-paperclip"></i>
+							<i class="fa-regular fa-face-smile"></i>
+						</div>
+						<textarea name="" id="" placeholder="Mesajınızı buraya gireniz..."></textarea>
+						<a href="#">
+							<i class="fa-regular fa-paper-plane"></i>
+						</a>
+					</div>
+				</div>
+			</section>
+		</div>
+	</div>
+	<div class="modal-type" id="data-modal" data-modal="AnamnezFormModal">
+		<div class="form-modal">
+			<h1>Title</h1>
+			<h3>Muammer Karaca Anamnez Formu</h3>
+			<i id="close-modal" class="fa-solid fa-xmark"></i>
+			<div class="show-progress">
+			</div>
+			<form>
+				<div class="part active-part" data-part-name="Kişi Bilgileri">
+					<div class="normal-form-group">
+						<label for="gender">Cinsiyetiniz :</label>
+						<select name="gender" id="gender">
+							<option selected>--Seçiniz--</option>
+							<option value="1">Kadın</option>
+							<option value="2">Erkek</option>
+						</select>
+					</div>
+					<div class="normal-form-group">
+						<label for="">Boyunuz</label>
+						<input type="text" placeholder="boyunuz(cm)">
+					</div>
+					<div class="normal-form-group">
+						<label for="">Kilo</label>
+						<input type="text" placeholder="kilonuz(kg)">
+					</div>
+					<div class="normal-form-group">
+						<label for="">Yaş</label>
+						<input type="text" placeholder="yaşınız">
+					</div>
+					<div class="normal-form-group">
+						<label for="">Bel Bölgesi</label>
+						<input type="text" placeholder="bel bölgesi(cm)">
+					</div>
+					<div class="normal-form-group">
+						<label for="">Basen Bölgesi</label>
+						<input type="text" placeholder="basen bölgesi(cm)">
+					</div>
+					<div class="normal-form-group">
+						<label for="">Göğüs Ölçesi</label>
+						<input type="text" placeholder="göğüs ölçünüz(cm)">
+					</div>
+				</div>
+				<div class="part" data-part-name="Kişisel Bilgiler">
+					<div class="normal-form-group">
+						<label for="">
+							BÖLGESEL KİLOLARINIZDAN ŞİKAYETÇİ MİSİNİZ? VARSA ŞİKAYETÇİ OLDUĞUNUZ
+							BÖLGELER.
+						</label>
+						<input type="text" placeholder="varsa lütfen buraya giriniz">
+					</div>
+					<div class="normal-form-group">
+						<label for="">SÜREKLİ OLARAK KULLANDIĞINIZ İLAÇLAR VAR MI?</label>
+						<input type="text" placeholder="varsa lütfen buraya giriniz">
+					</div>
+					<div class="normal-form-group">
+						<label for="">GENEL OALRAK KALKIŞ VE YATIŞ SAATLERİNİZİ BELİRTİR MİSİNİZ?</label>
+						<input type="text" placeholder="varsa lütfen buraya giriniz">
+					</div>
+					<div class="normal-form-group">
+						<label for="">KİLO VERMENİZE ENGEL OLAN KRONİK BİR RAHATSIZLIĞINIZ VAR MI ?</label>
+						<input type="text" placeholder="varsa lütfen buraya giriniz">
+					</div>
+					<div class="normal-form-group">
+						<label for="">
+							HERHANGİ BİR İŞTE ÇALIŞIYOR MUSUNUZ? İŞİNİZDEN BAHSEDER MİSİNİZ?(Gün içindeki
+							hareketliliğiniz belirlenmesi için gerekli)
+						</label>
+						<input type="text" placeholder="varsa lütfen buraya giriniz">
+					</div>
+					<div class="normal-form-group checkbox">
+						<label for=""> HAMİLELİK, EMZİRME GİBİ ÖZEL DURUMLARINIZ VAR MI ?</label>
+						<input type="checkbox">
+					</div>
+					<div class="normal-form-group checkbox">
+						<label for="">GECELERİ UYANIP YEMEK YER MİSİNİZ?</label>
+						<input type="checkbox">
+					</div>
+					<div class="normal-form-group checkbox">
+						<label for="">YEMEKLERE EXTRA TUZ EKLER MİSİNİZ?</label>
+						<input type="checkbox">
+					</div>
+				</div>
+				<div class="part" data-part-name="Diyet Geçmişiniz">
+					<div class="normal-form-group">
+						<label for="">
+							DAHA ÖNCE DİYET PROGRAMI UYGULADINIZ MI? UYGULADIĞINIZ DİYETİ VE SONUÇLARINI
+							KISACA BİZİMLE PAYLAŞIR MISINIZ?
+						</label>
+						<input type="text" placeholder="varsa lütfen buraya giriniz">
+					</div>
+					<div class="normal-form-group">
+						<label for=""> DİYET YAPARKEN SİZİ EN ÇOK ZORLAYAN ŞEYLER NELERDİR?</label>
+						<input type="text" placeholder="varsa lütfen buraya giriniz">
+					</div>
+				</div>
+				<div class="part" data-part-name="Sıvı Tüketimi">
+					<p>Neleri ne kadar içiyorsunuz ?</p>
+					<div class="drink-form">
+						<div class="drink-form-group">
+							<label for="">SU</label>
+							<input type="number" step="1" min="0">
+						</div>
+						<div class="drink-form-group">
+							<label for="">ÇAY</label>
+							<input type="number" step="1" min="0">
+						</div>
+						<div class="drink-form-group">
+							<label for="">KAHVE</label>
+							<input type="number" step="1" min="0">
+						</div>
+						<div class="drink-form-group">
+							<label for="">SODA</label>
+							<input type="number" step="1" min="0">
+						</div>
+						<div class="drink-form-group">
+							<label for="">BİTKİ ÇAYLARI</label>
+							<input type="number" step="1" min="0">
+						</div>
+						<div class="drink-form-group">
+							<label for="">Meyve Suyu</label>
+							<input type="number" step="1" min="0">
+						</div>
+						<div class="drink-form-group">
+							<label for="">GAZLI İÇECEK</label>
+							<input type="number" step="1" min="0">
+						</div>
+					</div>
+					<div class="normal-form-group">
+						<label for="">SICAK İÇECEKLERDE NE KADAR ŞEKER KULLANIRSINIZ?</label>
+						<input type="text" placeholder="boy(cm)">
+					</div>
+				</div>
+				<div class="part" data-part-name="Yeme Alışkanlığınız">
+					<p>LÜTFEN AŞAĞIDAKİ BOŞLUKLARA GÜNLÜK BESLENME ALIŞKANLIKLARINIZ YAZINIZ.</p>
+					<div class="normal-form-group">
+						<label for="">Sabah</label>
+						<textarea name="" id="" cols="30"></textarea>
+					</div>
+					<div class="normal-form-group">
+						<label for="">Sabah</label>
+						<textarea name="" id="" cols="30"></textarea>
+					</div>
+					<div class="normal-form-group">
+						<label for="">Ara Öğün</label>
+						<textarea name="" id="" cols="30"></textarea>
+					</div>
+					<div class="normal-form-group">
+						<label for="">ÖĞlen</label>
+						<textarea name="" id="" cols="30"></textarea>
+					</div>
+					<div class="normal-form-group">
+						<label for="">Ara Öğün</label>
+						<textarea name="" id="" cols="30"></textarea>
+					</div>
+					<div class="normal-form-group">
+						<label for="">Akşam</label>
+						<textarea name="" id="" cols="30"></textarea>
+					</div>
+					<div class="normal-form-group">
+						<label for="">Ara Öğün</label>
+						<textarea name="" id="" cols="30"></textarea>
+					</div>
+					<div class="normal-form-group">
+						<label for="">VAZGEÇEMEDİĞİM YEMEKLER, BESİNLER </label>
+						<input type="text">
+					</div>
+					<div class="normal-form-group">
+						<label for="">ASLA YİYEMEDİKLERİM </label>
+						<input type="text">
+					</div>
+					<div class="normal-form-group">
+						<label for="">SAĞLIĞIMA DOKUNANLAR </label>
+						<input type="text">
+					</div>
+					<button type="submit">Kaydet ve Diyetisyene Gönder</button>
+				</div>
+			</form>
+			<div class="modal-btn-group">
+				<button id="previous-modal-btn" class="previous-btn">Önceki</button>
+				<button id="next-modal-btn" class="next">Sonraki</button>
+			</div>
+		</div>
+	</div>

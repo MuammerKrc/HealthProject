@@ -1,0 +1,128 @@
+section.login-section {
+    height: calc(100vh - 5rem);
+    margin-top: 4rem;
+    display: flex;
+    align-items: center;
+    background-color: #e2e2e7;
+}
+
+.login_container {
+    margin: auto;
+    width: 50vw;
+    display: grid;
+    grid-template-columns: 2fr 4fr;
+    height: 80%;
+    box-shadow: var(--box-shadow2);
+    position: relative;
+    z-index: 10;
+}
+
+    .login_container::before {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 108%;
+        height: 105%;
+        background-color: var(--color-warning);
+        z-index: -1;
+        bottom: 2rem;
+        right: 2rem;
+    }
+
+.login__left {
+    background: url('/images/dd.jpg');
+    background-position: center;
+    position: relative;
+}
+
+.login__left-stick {
+    height: 12rem;
+    width: 120%;
+    position: absolute;
+    background-color: black;
+    bottom: -6rem;
+    left: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+    .login__left-stick h3 {
+        color: #fff;
+        margin-bottom: 1rem;
+    }
+
+    .login__left-stick p {
+        color: rgb(202, 201, 201);
+        text-align: center;
+    }
+
+    .login__left-stick a {
+        background-color: var(--color-warning);
+        padding: 0.8rem 2rem;
+        color: #fff;
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-top: 1rem;
+    }
+
+.login__right {
+    background-color: #fff;
+    padding: 3rem 2rem;
+}
+
+    .login__right h1 {
+        color: rgb(97, 97, 97);
+    }
+
+        .login__right h1 span {
+            color: var(--color-warning);
+        }
+
+    .login__right p {
+        margin: 1rem 0 3rem;
+        width: 70%;
+        text-align: justify;
+    }
+
+    .login__right form {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+        .login__right form .forms-login-group {
+            width: 100%;
+        }
+
+            .login__right form .forms-login-group i {
+                width: 2.5rem;
+                font-size: 1.7rem;
+                color: rgb(97, 97, 97);
+            }
+
+            .login__right form .forms-login-group input {
+                width: calc(100% - 3rem);
+                height: 3rem;
+                border: none;
+                border-bottom: 1px solid rgb(231, 228, 228);
+                padding: 0.4rem 0 1rem;
+                font-size: 1rem;
+            }
+
+                .login__right form .forms-login-group input::placeholder {
+                    color: rgb(114, 114, 114);
+                    font-size: 1rem;
+                }
+
+        .login__right form button {
+            width: 40%;
+            align-self: flex-end;
+            border: none;
+            padding: 1rem 2rem;
+            color: #fff;
+            background-color: var(--color-primary);
+            font-size: 1.2rem;
+            font-weight: 600;
+        }

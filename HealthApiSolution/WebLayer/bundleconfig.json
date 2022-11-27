@@ -16,5 +16,23 @@
     "inputFiles": [
       "wwwroot/js/site.js"
     ]
+  },
+  {
+    "outputFileName": "wwwroot/css/customers.min.css",
+    "inputFiles": [
+      "wwwroot/css/customers.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/signin.min.css",
+    "inputFiles": [
+      "wwwroot/css/signin.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/sign.min.css",
+    "inputFiles": [
+      "wwwroot/css/sign.css"
+    ]
   }
 ]

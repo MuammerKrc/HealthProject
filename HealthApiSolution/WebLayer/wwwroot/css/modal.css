@@ -1,0 +1,140 @@
+﻿.modal-type {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    z-index: 999999999;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-modal {
+    position: relative;
+    background-color: #fff;
+    padding: 20px;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+    max-height: 60vh;
+    min-width: 450px;
+    border-radius: 20px;
+}
+
+    .form-modal > i {
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.6);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: 0;
+        right: 0;
+        font-size: 2rem;
+        width: 2rem;
+        height: 2rem;
+        border-radius: 5px;
+        color: var(--color-danger);
+        cursor: pointer;
+    }
+
+    .form-modal .show-progress {
+        position: relative;
+        display: flex;
+        gap: 2rem;
+        flex-wrap: wrap;
+    }
+
+    .form-modal .modal-btn-group {
+        position: absolute;
+        bottom: 10px;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+        .form-modal .modal-btn-group button {
+            padding: 0.4rem 0.8rem;
+            border: none;
+            font-size: 0.8rem;
+            font-weight: 600;
+            background-color: var(--color-danger);
+            color: #fff;
+            border-radius: 4px;
+        }
+
+            .form-modal .modal-btn-group button:disabled {
+                background-color: gray;
+            }
+
+    .form-modal form {
+        position: relative;
+        padding-bottom: 4rem;
+    }
+
+        .form-modal form .part {
+            position: absolute;
+            visibility: hidden;
+            width: 100%;
+        }
+
+        .form-modal form .active-part {
+            position: relative;
+            visibility: visible;
+        }
+
+        .form-modal form .normal-form-group {
+            display: flex;
+            gap: 0.5rem;
+            flex-direction: column;
+            margin-top: 1rem;
+        }
+
+            .form-modal form .normal-form-group.checkbox {
+                flex-direction: row;
+                gap: 0.7rem;
+                align-items: center;
+            }
+
+            .form-modal form .normal-form-group input[type='text'] {
+                border: none;
+                padding: 15px;
+                border-radius: 10px;
+                background-color: var(--color-primary);
+                color: rgba(255, 255, 255, 1);
+                font-weight: 600;
+                font-size: 1rem;
+            }
+
+            .form-modal form .normal-form-group select {
+                border: none;
+                padding: 15px;
+                border-radius: 10px;
+                background-color: rgba(0, 0, 0, 0.6);
+                color: rgba(255, 255, 255, 1);
+                font-weight: 600;
+                font-size: 1rem;
+            }
+
+                .form-modal form .normal-form-group select option {
+                    color: #fff;
+                    font-size: 1rem;
+                    font-weight: 600;
+                }
+
+            .form-modal form .normal-form-group input[type='text']::placeholder {
+                text-transform: capitalize;
+                font-weight: 600;
+                color: rgba(0, 0, 0, 0.7);
+            }
+
+        .form-modal form label {
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+    .form-modal form {
+        background-color: aqua;
+    }
