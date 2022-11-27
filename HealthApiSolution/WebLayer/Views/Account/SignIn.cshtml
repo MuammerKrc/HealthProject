@@ -1,4 +1,6 @@
-﻿@{
+﻿@model CoreLayer.Dtos.IdentityDtos.LoginDto
+
+@{
 	ViewData["Title"] = "SignIn";
 }
 @section styles
@@ -18,16 +20,16 @@
 			<div class="login__right">
 				<h1>Merhaba Biz <span>Cadde Form</span></h1>
 				<p>Merhaba Tekrardan! Hesabına giriş yaparak en son neler olduğundan haberder ol.</p>
-				<form>
+				<form asp-action="SignIn" method="post">
 					<div class="forms-login-group">
 						<i class="fa-regular fa-envelope"></i>
-						<input type="email" placeholder="Email">
+						<input asp-for="Email" placeholder="Email">
 					</div>
 					<div class="forms-login-group">
 						<i class="fa-solid fa-lock"></i>
-						<input type="password" placeholder="Password">
+						<input asp-for="Password" type="password" placeholder="şifreniz">
 					</div>
-					<button> Giriş Yap</button>
+					<button type="submit"> Giriş Yap</button>
 				</form>
 			</div>
 		</div>

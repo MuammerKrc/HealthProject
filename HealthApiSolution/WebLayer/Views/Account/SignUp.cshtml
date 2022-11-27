@@ -1,45 +1,45 @@
-﻿
+﻿@model CoreLayer.Dtos.IdentityDtos.CreateUserDto
 @{
-    ViewData["Title"] = "SignUp";
+	ViewData["Title"] = "SignUp";
 }
 
 @section styles
-{
+	{
 	<link href="\css\sign.css" rel="stylesheet" />
 
 }
 
-<section class="login-section">
-	<div class="login_container">
-		<div class="login__left">
-			<div class="login__left-stick">
-				<h3>Hadi Durma Giriş Yap</h3>
-				<p>Zaten kayıt oldun mu ? Hemen aşağıdan giriş yap</p>
-				<a href="#">Giriş Yap</a>
+	<section class="login-section">
+		<div class="login_container">
+			<div class="login__left">
+				<div class="login__left-stick">
+					<h3>Hadi Durma Giriş Yap</h3>
+					<p>Zaten kayıt oldun mu ? Hemen aşağıdan giriş yap</p>
+					<a href="#">Giriş Yap</a>
+				</div>
+			</div>
+			<div class="login__right">
+				<h1>Merhaba Biz <span>Cadde Form</span></h1>
+				<p>Hemen aşağıdan kayıt olarak bizim ailemize katıl!</p>
+				<form asp-action="SignUp" method="post">
+					<div class="forms-login-group">
+						<i class="fa-solid fa-user"></i>
+						<input asp-for="Name" type="text" placeholder="Adınız">
+					</div>
+					<div class="forms-login-group">
+						<i class="fa-solid fa-user"></i>
+						<input asp-for="Surname" type="text" placeholder="Soyadınız">
+					</div>
+					<div class="forms-login-group">
+						<i class="fa-regular fa-envelope"></i>
+						<input asp-for="Email" type="email" placeholder="Email">
+					</div>
+					<div class="forms-login-group">
+						<i class="fa-solid fa-lock"></i>
+						<input asp-for="Password" type="password" placeholder="Şifreniz">
+					</div>
+					<button type="submit">Kayıt Ol</button>
+				</form>
 			</div>
 		</div>
-		<div class="login__right">
-			<h1>Merhaba Biz <span>Cadde Form</span></h1>
-			<p>Hemen aşağıdan kayıt olarak bizim ailemize katıl!</p>
-			<form>
-				<div class="forms-login-group">
-					<i class="fa-regular fa-envelope"></i>
-					<input type="text" placeholder="Adınız">
-				</div>
-				<div class="forms-login-group">
-					<i class="fa-regular fa-envelope"></i>
-					<input type="text" placeholder="Soyadınız">
-				</div>
-				<div class="forms-login-group">
-					<i class="fa-regular fa-envelope"></i>
-					<input type="email" placeholder="Email">
-				</div>
-				<div class="forms-login-group">
-					<i class="fa-solid fa-lock"></i>
-					<input type="password" placeholder="Şifreniz">
-				</div>
-				<button>Kayıt Ol</button>
-			</form>
-		</div>
-	</div>
-</section>
+	</section>

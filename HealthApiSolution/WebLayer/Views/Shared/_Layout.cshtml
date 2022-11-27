@@ -22,12 +22,11 @@
 			<ul class="nav__menu">
 				<li><a href="#index.html">Hizmetlerimiz</a></li>
 				<li><a href="#index.html">Paketler</a></li>
-				<li><a asp-controller="Customer" >Müşteri</a></li>
+				<li><a asp-controller="Customer" asp-action="Index" >Müşteri</a></li>
 				<li><a asp-controller="Account" asp-action="SignIn">Giriş Yap</a></li>
 				<li><a asp-controller="Account" asp-action="SignUp">Kayıt Ol</a></li>
-
 			</ul>
-			<button id="open-menu" class=""><i class="fa-solid fa-bars"></i></button>
+			<button id="open-menu"><i class="fa-solid fa-bars"></i></button>
 			<button id="close-menu"><i class="fa-solid fa-xmark"></i></button>
 		</div>
 	</nav>

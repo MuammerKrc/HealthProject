@@ -27,4 +27,10 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.10" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CoreLayer\CoreLayer.csproj" />
+    <ProjectReference Include="..\DataLayer\DataLayer.csproj" />
+    <ProjectReference Include="..\ServiceLayer\ServiceLayer.csproj" />
+  </ItemGroup>
+
 </Project>
