@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "zYCPtF3dnkHXeHJ9h7brCwEt80wokM0/Xk4Ju0Pm9ldO25F3Z6hkv1LWqlVL4WqclWsaGZVnrdGDs3SA/QvOgw==",
+  "dgSpecHash": "Ugw91Vs5m74MzWQ+QlBqC8TgIepGwc+I5J9o+1hj7JgzpwzMnN0uDHBjmqex/ROQqQUoduPSgm9xBRVzR12f6w==",
   "success": true,
   "projectFilePath": "F:\\ownerProject\\HealthProjects\\HealthApiSolution\\WebLayer\\WebLayer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\muamm\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\muamm\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",
-    "C:\\Users\\muamm\\.nuget\\packages\\humanizer.core\\2.2.0\\humanizer.core.2.2.0.nupkg.sha512",
+    "C:\\Users\\muamm\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\muamm\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",
     "C:\\Users\\muamm\\.nuget\\packages\\messagepack.annotations\\2.1.152\\messagepack.annotations.2.1.152.nupkg.sha512",
     "C:\\Users\\muamm\\.nuget\\packages\\messagepackanalyzer\\2.1.152\\messagepackanalyzer.2.1.152.nupkg.sha512",
@@ -40,6 +40,7 @@
     "C:\\Users\\muamm\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.9\\microsoft.entityframeworkcore.6.0.9.nupkg.sha512",
     "C:\\Users\\muamm\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.9\\microsoft.entityframeworkcore.abstractions.6.0.9.nupkg.sha512",
     "C:\\Users\\muamm\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\6.0.9\\microsoft.entityframeworkcore.analyzers.6.0.9.nupkg.sha512",
+    "C:\\Users\\muamm\\.nuget\\packages\\microsoft.entityframeworkcore.design\\6.0.9\\microsoft.entityframeworkcore.design.6.0.9.nupkg.sha512",
     "C:\\Users\\muamm\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\6.0.9\\microsoft.entityframeworkcore.relational.6.0.9.nupkg.sha512",
     "C:\\Users\\muamm\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\6.0.9\\microsoft.entityframeworkcore.sqlserver.6.0.9.nupkg.sha512",
     "C:\\Users\\muamm\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",

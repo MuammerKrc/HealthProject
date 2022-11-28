@@ -278,3 +278,4 @@ F:\ownerProject\HealthProjects\HealthApiSolution\WebLayer\bin\Debug\net6.0\CoreL
 F:\ownerProject\HealthProjects\HealthApiSolution\WebLayer\bin\Debug\net6.0\DataLayer.pdb
 F:\ownerProject\HealthProjects\HealthApiSolution\WebLayer\bin\Debug\net6.0\ServiceLayer.pdb
 F:\ownerProject\HealthProjects\HealthApiSolution\WebLayer\obj\Debug\net6.0\WebLayer.MvcApplicationPartsAssemblyInfo.cs
+F:\ownerProject\HealthProjects\HealthApiSolution\WebLayer\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll

@@ -12,6 +12,7 @@ namespace CoreLayer.Models.DietModels
 {
     public class Diet : BaseModel<int>
     {
+
         public AnamnesisForm? AnamnesisForm { get; set; }
         public string? UserId { get; set; }
 
