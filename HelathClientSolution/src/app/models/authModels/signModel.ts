@@ -1,4 +1,4 @@
-export interface SignUpModel {
+export interface SignModel {
   name: string;
   surname: string;
   email: string;

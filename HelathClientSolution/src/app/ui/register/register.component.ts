@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Validators, FormControl, FormGroup } from '@angular/forms';
-import { SignUpModel } from 'src/app/models/authModels/signupModel';
+import { SignModel } from 'src/app/models/authModels/signModel';
 import { AuthService } from 'src/app/services/http-services/auth.service';
 import { RegisterModule } from './register.module';
 
@@ -20,10 +20,10 @@ export class RegisterComponent implements OnInit {
     surname: new FormControl(null, [Validators.required, Validators.min(2), Validators.max(50)]),
     password: new FormControl(null, [Validators.required, Validators.min(5)])
   });
-  registerModel: SignUpModel;
+  registerModel: SignModel;
 
   registerClick() {
-    this.registerModel = this.registerForm.value as SignUpModel;
+    this.registerModel = this.registerForm.value as SignModel;
     console.table(this.registerModel);
     this.authservice.signUp(this.registerModel).subscribe(i => {
       console.log('slm');

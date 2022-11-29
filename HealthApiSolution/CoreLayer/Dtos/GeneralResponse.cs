@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CoreLayer.Dtos
 {
-    public class Response<TModel>
+    public class QResponse<TModel>
     {
         public bool IsSuccess { get; set; }
         public TModel Data { get; set; }
@@ -18,19 +18,19 @@ namespace CoreLayer.Dtos
 
         public int ErrorStatus = 0;
 
-        public static Response<TModel> SuccessResponse(TModel data, string message = "")
+        public static QResponse<TModel> SuccessResponse(TModel data, string message = "")
         {
-            return new Response<TModel>() { IsSuccess = true, Data = data, Message = message };
+            return new QResponse<TModel>() { IsSuccess = true, Data = data, Message = message };
         }
 
-        public static Response<NoResponse> SuccessResponse(string message = "")
+        public static QResponse<NoResponse> SuccessResponse(string message = "")
         {
-            return new Response<NoResponse>() { IsSuccess = true, Data = new NoResponse(), Message = message };
+            return new QResponse<NoResponse>() { IsSuccess = true, Data = new NoResponse(), Message = message };
         }
 
-        public static Response<NoResponse> ErrorResponse(string error, bool showError = true, int errorStatus = 500)
+        public static QResponse<NoResponse> ErrorResponse(string error, bool showError = true, int errorStatus = 500)
         {
-            return new Response<NoResponse>()
+            return new QResponse<NoResponse>()
             {
                 IsSuccess = false,
                 Errors = new List<string>() { error },
@@ -39,9 +39,9 @@ namespace CoreLayer.Dtos
                 ShowError = true,
             };
         }
-        public static Response<NoResponse> ErrorResponse(List<string> error, bool showError = true, int errorStatus = 500)
+        public static QResponse<NoResponse> ErrorResponse(List<string> error, bool showError = true, int errorStatus = 500)
         {
-            return new Response<NoResponse>()
+            return new QResponse<NoResponse>()
             {
                 IsSuccess = false,
                 Errors = error,

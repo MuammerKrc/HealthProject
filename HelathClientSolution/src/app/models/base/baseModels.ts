@@ -5,3 +5,5 @@ export class BaseModel<T>
   errors: string[] = [];
 }
 
+
+

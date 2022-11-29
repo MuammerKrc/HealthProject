@@ -3,232 +3,45 @@
 </div>
 
 <div class="left-container" style="flex-wrap: wrap; align-items: center; justify-content: center;">
-  <div class="wrapper box-shadow-effect">
-    <div class="icon-group">
-      <i class="fas fa-ellipsis-v" userInfoDirectiveElement></i>
-    </div>
-    <!-- <div class="setting-area"></div> -->
 
-    <div class="wrapper-left">
-      <div class="img-area">
-        <div class="inner-area">
-          <img
-            src="https://images.unsplash.com/photo-1492288991661-058aa541ff43?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
-            alt="">
+  <ng-container *ngFor="let item of customerList">
+    <div class="wrapper box-shadow-effect">
+      <div class="icon-group">
+        <i class="fas fa-ellipsis-v" userInfoDirectiveElement></i>
+      </div>
+      <!-- <div class="setting-area"></div> -->
+      <div class="wrapper-left">
+        <div class="img-area">
+          <div class="inner-area">
+            <img
+              src="https://images.unsplash.com/photo-1492288991661-058aa541ff43?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+              alt="">
+          </div>
+        </div>
+      </div>
+      <div class="wrapper-right">
+        <div class="name-group">
+          <h3>{{item.fullName??""}}</h3>
+        </div>
+        <div class="phone-info make-flex">
+          <i class="fa-solid fa-mobile-screen"></i>
+          <p>0552 467 37 47</p>
+        </div>
+        <div class="package-info-item make-flex">
+          <i class="fa-solid fa-utensils"></i>
+          <span class="active">5</span>
+        </div>
+        <div class="package-info-item make-flex">
+          <i class="fa-solid fa-dumbbell"></i>
+          <span><i class="fa-solid fa-exclamation"></i></span>
+        </div>
+        <div class="buttons">
+          <button>Mesaj Gönder</button>
+          <button>Genel Bilgi</button>
         </div>
       </div>
     </div>
-    <div class="wrapper-right">
-      <div class="name-group">
-        <h3>Muammer KARACA</h3>
-      </div>
-      <div class="phone-info make-flex">
-        <i class="fa-solid fa-mobile-screen"></i>
-        <p>0552 467 37 47</p>
-      </div>
-      <div class="package-info-item make-flex">
-        <i class="fa-solid fa-utensils"></i>
-        <span class="active">5</span>
-      </div>
-      <div class="package-info-item make-flex">
-        <i class="fa-solid fa-dumbbell"></i>
-        <span><i class="fa-solid fa-exclamation"></i></span>
-      </div>
-      <div class="buttons">
-        <button>Mesaj Gönder</button>
-        <button>Genel Bilgi</button>
-      </div>
-    </div>
-  </div>
+  </ng-container>
 
 
-  <div class="wrapper box-shadow-effect">
-    <div class="icon-group">
-      <i class="fas fa-ellipsis-v" userInfoDirectiveElement></i>
-    </div>
-    <!-- <div class="setting-area"></div> -->
-
-    <div class="wrapper-left">
-      <div class="img-area">
-        <div class="inner-area">
-          <img
-            src="https://images.unsplash.com/photo-1492288991661-058aa541ff43?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
-            alt="">
-        </div>
-      </div>
-    </div>
-    <div class="wrapper-right">
-      <div class="name-group">
-        <h3>Muammer KARACA</h3>
-      </div>
-      <div class="phone-info make-flex">
-        <i class="fa-solid fa-mobile-screen"></i>
-        <p>0552 467 37 47</p>
-      </div>
-      <div class="package-info-item make-flex">
-        <i class="fa-solid fa-utensils"></i>
-        <span class="active">5</span>
-      </div>
-      <div class="package-info-item make-flex">
-        <i class="fa-solid fa-dumbbell"></i>
-        <span><i class="fa-solid fa-exclamation"></i></span>
-      </div>
-      <div class="buttons">
-        <button>Mesaj Gönder</button>
-        <button>Genel Bilgi</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="wrapper box-shadow-effect">
-    <div class="icon-group">
-      <i class="fas fa-ellipsis-v" userInfoDirectiveElement></i>
-    </div>
-    <!-- <div class="setting-area"></div> -->
-
-    <div class="wrapper-left">
-      <div class="img-area">
-        <div class="inner-area">
-          <img
-            src="https://images.unsplash.com/photo-1492288991661-058aa541ff43?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
-            alt="">
-        </div>
-      </div>
-    </div>
-    <div class="wrapper-right">
-      <div class="name-group">
-        <h3>Muammer KARACA</h3>
-      </div>
-      <div class="phone-info make-flex">
-        <i class="fa-solid fa-mobile-screen"></i>
-        <p>0552 467 37 47</p>
-      </div>
-      <div class="package-info-item make-flex">
-        <i class="fa-solid fa-utensils"></i>
-        <span class="active">5</span>
-      </div>
-      <div class="package-info-item make-flex">
-        <i class="fa-solid fa-dumbbell"></i>
-        <span><i class="fa-solid fa-exclamation"></i></span>
-      </div>
-      <div class="buttons">
-        <button>Mesaj Gönder</button>
-        <button>Genel Bilgi</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="wrapper box-shadow-effect">
-    <div class="icon-group">
-      <i class="fas fa-ellipsis-v" userInfoDirectiveElement></i>
-    </div>
-    <!-- <div class="setting-area"></div> -->
-
-    <div class="wrapper-left">
-      <div class="img-area">
-        <div class="inner-area">
-          <img
-            src="https://images.unsplash.com/photo-1492288991661-058aa541ff43?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
-            alt="">
-        </div>
-      </div>
-    </div>
-    <div class="wrapper-right">
-      <div class="name-group">
-        <h3>Muammer KARACA</h3>
-      </div>
-      <div class="phone-info make-flex">
-        <i class="fa-solid fa-mobile-screen"></i>
-        <p>0552 467 37 47</p>
-      </div>
-      <div class="package-info-item make-flex">
-        <i class="fa-solid fa-utensils"></i>
-        <span class="active">5</span>
-      </div>
-      <div class="package-info-item make-flex">
-        <i class="fa-solid fa-dumbbell"></i>
-        <span><i class="fa-solid fa-exclamation"></i></span>
-      </div>
-      <div class="buttons">
-        <button>Mesaj Gönder</button>
-        <button>Genel Bilgi</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="wrapper box-shadow-effect">
-    <div class="icon-group">
-      <i class="fas fa-ellipsis-v" userInfoDirectiveElement></i>
-    </div>
-    <!-- <div class="setting-area"></div> -->
-
-    <div class="wrapper-left">
-      <div class="img-area">
-        <div class="inner-area">
-          <img
-            src="https://images.unsplash.com/photo-1492288991661-058aa541ff43?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
-            alt="">
-        </div>
-      </div>
-    </div>
-    <div class="wrapper-right">
-      <div class="name-group">
-        <h3>Muammer KARACA</h3>
-      </div>
-      <div class="phone-info make-flex">
-        <i class="fa-solid fa-mobile-screen"></i>
-        <p>0552 467 37 47</p>
-      </div>
-      <div class="package-info-item make-flex">
-        <i class="fa-solid fa-utensils"></i>
-        <span class="active">5</span>
-      </div>
-      <div class="package-info-item make-flex">
-        <i class="fa-solid fa-dumbbell"></i>
-        <span><i class="fa-solid fa-exclamation"></i></span>
-      </div>
-      <div class="buttons">
-        <button>Mesaj Gönder</button>
-        <button>Genel Bilgi</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="wrapper box-shadow-effect">
-    <div class="icon-group">
-      <i class="fas fa-ellipsis-v" userInfoDirectiveElement></i>
-    </div>
-    <!-- <div class="setting-area"></div> -->
-
-    <div class="wrapper-left">
-      <div class="img-area">
-        <div class="inner-area">
-          <img
-            src="https://images.unsplash.com/photo-1492288991661-058aa541ff43?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
-            alt="">
-        </div>
-      </div>
-    </div>
-    <div class="wrapper-right">
-      <div class="name-group">
-        <h3>Muammer KARACA</h3>
-      </div>
-      <div class="phone-info make-flex">
-        <i class="fa-solid fa-mobile-screen"></i>
-        <p>0552 467 37 47</p>
-      </div>
-      <div class="package-info-item make-flex">
-        <i class="fa-solid fa-utensils"></i>
-        <span class="active">5</span>
-      </div>
-      <div class="package-info-item make-flex">
-        <i class="fa-solid fa-dumbbell"></i>
-        <span><i class="fa-solid fa-exclamation"></i></span>
-      </div>
-      <div class="buttons">
-        <button>Mesaj Gönder</button>
-        <button>Genel Bilgi</button>
-      </div>
-    </div>
-  </div>
 </div>

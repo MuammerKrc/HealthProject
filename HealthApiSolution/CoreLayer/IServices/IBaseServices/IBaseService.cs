@@ -9,9 +9,9 @@ namespace CoreLayer.IServices.IBaseServices
 {
     public interface IBaseService<TModel, TDto, TKey>
     {
-        Task<Response<NoResponse>> CreateAsync(TDto dto);
-        Task<Response<TDto>> GetByIdAsync(TKey id);
-        Task<Response<NoResponse>> DeleteAsync(TKey id);
-        Task<Response<List<TDto>>> GetAllAsync();
+        Task<NoResponse> CreateAsync(TDto dto);
+        Task<TDto> GetByIdAsync(TKey id);
+        Task<NoResponse> DeleteAsync(TKey id);
+        Task<List<TDto>> GetAllAsync();
     }
 }

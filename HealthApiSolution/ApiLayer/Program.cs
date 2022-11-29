@@ -7,7 +7,7 @@ using Microsoft.IdentityModel.Tokens;
 using ServiceLayer;
 
 var builder = WebApplication.CreateBuilder(args);
-
+builder.Services.AddHttpContextAccessor();
 // Add services to the container.
 builder.Services.AddDataLayerRegistration(builder.Configuration);
 builder.Services.AddServiceLayerRegistration(builder.Configuration);

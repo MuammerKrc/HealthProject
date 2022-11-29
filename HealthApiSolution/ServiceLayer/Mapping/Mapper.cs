@@ -8,6 +8,7 @@ using CoreLayer.Dtos.AnamnesisFormDtos;
 using CoreLayer.Dtos.BodyInfoDtos;
 using CoreLayer.Dtos.BuyingReportsDtos;
 using CoreLayer.Dtos.DietDtos;
+using CoreLayer.Dtos.IdentityDtos;
 using CoreLayer.Dtos.PackageDtos;
 using CoreLayer.Dtos.PilatesDtos;
 using CoreLayer.Dtos.TokenDtos;
@@ -16,6 +17,7 @@ using CoreLayer.Models.AnamnesisFormModels;
 using CoreLayer.Models.BodyInfoModels;
 using CoreLayer.Models.BuyingReportsModel;
 using CoreLayer.Models.DietModels;
+using CoreLayer.Models.IdentityModels;
 using CoreLayer.Models.JwtModels;
 using CoreLayer.Models.PackageModel;
 using CoreLayer.Models.PilatesModels;
@@ -27,6 +29,7 @@ namespace ServiceLayer.Mapping
     {
         public Mapper()
         {
+            CreateMap<AppUser, AppUserDto>().ReverseMap();
             CreateMap<AnamnesisFormDto, AnamnesisForm>().ReverseMap();
             CreateMap<BodyInfoDto, BodyInfo>().ReverseMap();
             CreateMap<BuyingReportsDto, BuyingReport>().ReverseMap();

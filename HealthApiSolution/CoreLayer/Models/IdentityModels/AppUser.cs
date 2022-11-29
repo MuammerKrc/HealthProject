@@ -24,5 +24,6 @@ namespace CoreLayer.Models.IdentityModels
         public Diet? Diet { get; set; }
         public Pilates? Pilates { get; set; }
         public BodyInfo? BodyInfo { get; set; }
+        public bool IsCustomer { get; set; } = true;
     }
 }

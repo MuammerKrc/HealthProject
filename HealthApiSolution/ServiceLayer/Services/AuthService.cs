@@ -18,7 +18,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ServiceLayer.Services
 {
-    public class AuthService : IAuthService
+    public class AuthService :RoleService, IAuthService
     {
         private readonly UserManager<AppUser> _userManager;
         private readonly ITokenService _tokenService;
@@ -32,6 +32,7 @@ namespace ServiceLayer.Services
 
         public async Task<TokenDto> LoginAsync(LoginDto dto)
         {
+    
             var user = await _userManager.FindByEmailAsync(dto.Email);
             if (user == null)
                 throw new AuthenticationErrorException();

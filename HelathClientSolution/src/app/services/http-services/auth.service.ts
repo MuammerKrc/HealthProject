@@ -3,7 +3,8 @@ import { Inject, inject, Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, tap } from 'rxjs';
 import { AuthResponse } from 'src/app/models/authModels/authResponse';
 import { LoginModel } from 'src/app/models/authModels/loginModel';
-import { SignUpModel } from 'src/app/models/authModels/signupModel';
+import { SignModel } from 'src/app/models/authModels/signModel';
+
 import { BaseModel } from 'src/app/models/base/baseModels';
 import { NoResponse } from 'src/app/models/base/noResponse';
 import { UserModel } from 'src/app/models/userModel';
@@ -23,7 +24,7 @@ export class AuthService {
 
   userObser = new BehaviorSubject<UserModel>(null);
 
-  signUp(model: SignUpModel): Observable<BaseModel<NoResponse> | null> {
+  signUp(model: SignModel): Observable<BaseModel<NoResponse> | null> {
     return this.http.post<BaseModel<NoResponse>>(this.registerUrl, model).pipe(tap(response => {
       debugger;
       if (response.isSuccess) {

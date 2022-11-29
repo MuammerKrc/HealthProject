@@ -24,31 +24,31 @@ namespace ServiceLayer.Services.BaseServices
             _mapper = mapper;
         }
 
-        public   async Task<Response<NoResponse>> CreateAsync(TDto dto)
+        public   async Task<NoResponse> CreateAsync(TDto dto)
         {
             var model = _mapper.Map<TModel>(dto);
             _repository.Add(model);
             await _repository.SaveAsync();
-            return Response<NoResponse>.SuccessResponse();
+            return new NoResponse();
         }
 
-        public  async Task<Response<NoResponse>> DeleteAsync(TKey id)
+        public  async Task<NoResponse> DeleteAsync(TKey id)
         {
             await _repository.Delete(id);
             await _repository.SaveAsync();
-            return Response<NoResponse>.SuccessResponse();
+            return new NoResponse();
         }
 
-        public  async Task<Response<List<TDto>>> GetAllAsync()
+        public  async Task<List<TDto>> GetAllAsync()
         {
             var result = await _repository.GetAllAsync();
-            return Response<List<TDto>>.SuccessResponse(_mapper.Map<List<TDto>>(result));
+            return _mapper.Map<List<TDto>>(result);
         }
 
-        public  async Task<Response<TDto>> GetByIdAsync(TKey id)
+        public  async Task<TDto> GetByIdAsync(TKey id)
         {
             var result = await _repository.GetByIdAsync(id);
-            return Response<TDto>.SuccessResponse(_mapper.Map<TDto>(result));
+            return _mapper.Map<TDto>(result);
         }
     }
 }

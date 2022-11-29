@@ -26,7 +26,6 @@ namespace ServiceLayer
 
 
             //service registered
-            //services.AddScoped(typeof(IBaseService<,,>), typeof(BaseService<,,>));
             services.AddScoped(typeof(IBaseService<,,>), typeof(BaseService<,,>));
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IAuthService, AuthService>();
@@ -35,6 +34,7 @@ namespace ServiceLayer
             services.AddScoped<IDietService, DietService>();
             services.AddScoped<IPilatesService, PilatesService>();
             services.AddScoped<IPackageService, PackageService>();
+            services.AddScoped<ICustomerService, CustomerService>();
 
         }
     }

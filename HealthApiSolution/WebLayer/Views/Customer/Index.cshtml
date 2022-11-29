@@ -1,4 +1,6 @@
-﻿@{
+﻿@model CoreLayer.Dtos.IdentityDtos.AppUserDto
+
+@{
 	ViewData["Title"] = "Index";
 }
 
@@ -11,7 +13,7 @@
 		<div class="page_left">
 			<section class="welcome-page-section">
 				<div class="conts welcome-page__container">
-					<h2>Hoşgeldiniz Muammer Karaca</h2>
+					<h2>Hoşgeldiniz @(Model.FullName)</h2>
 				</div>
 			</section>
 			<section class="general-page-section">

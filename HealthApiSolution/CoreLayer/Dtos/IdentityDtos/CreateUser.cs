@@ -14,17 +14,14 @@ namespace CoreLayer.Dtos.IdentityDtos
         public string Email { get; set; }
         public string Password { get; set; }
 
-        public AppUser GetNewUser()
+        public CreateUserDto GetNewUser()
         {
-            return new AppUser()
+            return new CreateUserDto()
             {
-                FullName = (this.Name ?? "") + " " + (this.Surname ?? ""),
-
-                Id = Guid.NewGuid().ToString(),
+                Password = this.Password,
                 Name = this.Name,
                 Surname = this.Surname,
                 Email = this.Email,
-                UserName = Guid.NewGuid().ToString()
             };
         }
     }

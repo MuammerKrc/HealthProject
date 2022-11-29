@@ -20,7 +20,10 @@ namespace ApiLayer.Controllers
         public async Task<IActionResult> CreateUser(CreateUserDto dto)
         {
             var result = await _userService.CreateAsync(dto);
+            
             return Ok(result);
         }
+
+    
     }
 }

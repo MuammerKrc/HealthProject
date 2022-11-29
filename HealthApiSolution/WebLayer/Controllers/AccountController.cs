@@ -1,21 +1,23 @@
 ﻿using CoreLayer.Dtos.IdentityDtos;
+using CoreLayer.IServices;
 using CoreLayer.Models.IdentityModels;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
+using ServiceLayer.Services;
 using SignInResult = Microsoft.AspNetCore.Identity.SignInResult;
 
 namespace WebLayer.Controllers
 {
-    public class AccountController : Controller
+    public class AccountController : _baseController
     {
         private UserManager<AppUser> _userManager;
         private SignInManager<AppUser> _signInManager;
-
-        public AccountController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager)
+        public AccountController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, IUserService userService) : base(userService)
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            _userService = userService;
         }
 
         public IActionResult SignIn(string ReturnUrl)
@@ -74,12 +76,10 @@ namespace WebLayer.Controllers
             }
 
             var user = model.GetNewUser();
-
-            IdentityResult result = await _userManager.CreateAsync(user, model.Password);
+            IdentityResult result = await _userService.CreateAsyncCustomer(user); 
             if (!result.Succeeded)
             {
                 result.Errors.ToList().ForEach(i => { ModelState.AddModelError("", i.Description); });
-
                 return View(model);
             }
 
