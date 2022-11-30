@@ -1,0 +1,89 @@
+.title {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+
+.title button {
+  border: none;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  background-color: var(--color-primary);
+  font-weight: 600;
+  color: #fff;
+}
+
+.package-view {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 3rem;
+  background-color: #fff;
+  padding: 5rem;
+}
+
+.package-card {
+  padding: 1rem;
+  border: 1px solid;
+}
+
+.package-title {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 0.3rem;
+}
+
+.package-title-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+}
+
+.total {
+  margin-top: 1rem;
+  text-align: center;
+  color: var(--color-danger);
+}
+
+.item-symbol {
+
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  gap: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-success);
+}
+
+.item-symbol.pilates {
+  background-color: var(--color-warning);
+}
+
+.package-body {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.package-body p {
+  padding: 5px;
+  margin-top: 0.7rem;
+}
+
+.package-footer {
+  text-align: center;
+}
+
+.package-footer button {
+  margin-top: 1rem;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  background-color: var(--color-primary);
+  color: #fff;
+}

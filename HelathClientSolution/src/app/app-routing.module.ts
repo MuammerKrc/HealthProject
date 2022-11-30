@@ -10,7 +10,9 @@ const routes: Routes = [
       { path: "", component: HomeComponent },
       { path: "customers", loadChildren: () => import("./ui/customers/customers.module").then(i => i.CustomersModule) },
       { path: "user-info", loadChildren: () => import("./ui/user-info/user-info.module").then(i => i.UserInfoModule) },
-      {path:"write-diet",loadChildren:()=>import("./ui/write-diet/write-diet.module").then(i=>i.WriteDietModule)}
+      { path: "write-diet", loadChildren: () => import("./ui/write-diet/write-diet.module").then(i => i.WriteDietModule) },
+      { path: "package", loadChildren: () => import("./ui/packages/packages.module").then(i => i.PackagesModule) }
+
     ]
   },
   { path: "register", loadChildren: () => import('./ui/register/register.module').then(module => module.RegisterModule) },

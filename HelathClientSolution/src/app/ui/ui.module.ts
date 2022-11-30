@@ -5,6 +5,7 @@ import { RegisterModule } from './register/register.module';
 import { LoginModule } from './login/login.module';
 import { UserInfoModule } from './user-info/user-info.module';
 import { WriteDietModule } from './write-diet/write-diet.module';
+import { PackagesModule } from './packages/packages.module';
 
 
 
@@ -18,7 +19,8 @@ import { WriteDietModule } from './write-diet/write-diet.module';
     RegisterModule,
     LoginModule,
     UserInfoModule,
-    WriteDietModule
+    WriteDietModule,
+    PackagesModule
   ]
 })
 export class UiModule { }
