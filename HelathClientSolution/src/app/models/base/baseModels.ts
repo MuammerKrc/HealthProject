@@ -1,9 +1,7 @@
-export class BaseModel<T>
-{
-  isSuccess: boolean = false;
-  data: T;
-  errors: string[] = [];
+
+export interface BaseModel<T> {
+  isSuccess: boolean;
+  data?: T;
+  errors?: string[];
 }
-
-
 

@@ -22,10 +22,14 @@
   gap: 3rem;
   background-color: #fff;
   padding: 5rem;
+  width: 100%;
 }
 
 .package-card {
   padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 330px;
   border: 1px solid;
 }
 
@@ -78,6 +82,12 @@
 
 .package-footer {
   text-align: center;
+  flex-direction: column;
+  justify-self: end;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: end;
 }
 
 .package-footer button {
@@ -86,4 +96,14 @@
   padding: 0.6rem 1.2rem;
   background-color: var(--color-primary);
   color: #fff;
+}
+
+.package-footer button.delete {
+  margin-top: 0.5rem;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  color: var(--color-danger);
+  font-size: 1rem;
+  font-weight: 600;
 }

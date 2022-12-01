@@ -62,13 +62,12 @@ export class AuthService {
   }
 
 
-  createUserModel(response: AuthResponse) {
+  createUserModel(response?: AuthResponse) {
     var expirationDate = new Date(response.expirationAccessToken);
     var newuser = new UserModel("", response.accessToken, expirationDate, response.refresToken);
     this.userObser.next(newuser);
     localStorage.setItem("user", JSON.stringify(newuser));
   }
-
 
 
 }

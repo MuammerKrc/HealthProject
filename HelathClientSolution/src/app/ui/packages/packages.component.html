@@ -1,34 +1,50 @@
 <div class="title">
   <h2>Paketler</h2>
-  <button type="button">Paket Ekle</button>
 </div>
 
 <div class="left-container box-shadow-effect">
   <div class="package-view">
-    <div class="package-card">
-      <div class="package-title">
-        <div class="package-title-item">
-          <div class="item-symbol">
-            <i class="fa-solid fa-utensils"></i>
-            <h3>Diyet</h3>
+    <ng-container *ngFor="let item of packageList">
+        <div class="package-card">
+          <div class="package-title">
+            <ng-container *ngFor="let packageItem of item.packageItemRelations">
+              <ng-container *ngIf="packageItem.packageType==1">
+                <div class="package-title-item">
+                  <div class="item-symbol">
+                    <i class="fa-solid fa-utensils"></i>
+                    <h3>Diyet</h3>
+                  </div>
+                  <h3>Hak: {{packageItem.total??0}}</h3>
+                </div>
+              </ng-container>
+              <ng-container *ngIf="packageItem.packageType==2">
+                <div class="package-title-item ">
+                  <div class="item-symbol pilates">
+                    <i class="fa-solid fa-dumbbell"></i>
+                    <h3>Pilates</h3>
+                  </div>
+                  <h3>Hak: {{packageItem.total??0}}</h3>
+                </div>
+              </ng-container>
+            </ng-container>
           </div>
-          <h3>Hak: 4</h3>
+          <div class="total">
+            <h2>{{item.totalSalary | currency:'TL' }}</h2>
+          </div>
+          <div class="package-body">
+            <h4>{{item.title}}</h4>
+            <p>{{item.description}}
+            </p>
+          </div>
+          <div class="package-footer">
+            <button type="button">Paketi Güncelle</button>
+            <button type="button" class="delete" (click)="deletePackage(item.id)">Sil</button>
+          </div>
         </div>
-      </div>
-      <div class="total">
-        <h2>1.200 TL</h2>
-      </div>
-      <div class="package-body">
-        <h4>Diyet ve Pilates Paketi</h4>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. At, accusantium? Dolor, sapiente nam ad tempora at
-        </p>
-      </div>
-      <div class="package-footer">
-        <button type="button">Paketi Güncelle</button>
-      </div>
-    </div>
+    </ng-container>
 
-    <div class="package-card">
+
+    <!-- <div class="package-card">
       <div class="package-title">
         <div class="package-title-item">
           <div class="item-symbol ">
@@ -57,11 +73,8 @@
         <button type="button">Paketi Güncelle</button>
       </div>
     </div>
-
-
     <div class="package-card">
       <div class="package-title">
-
         <div class="package-title-item">
           <div class="item-symbol pilates">
             <i class="fa-solid fa-dumbbell"></i>
@@ -82,7 +95,6 @@
         <button type="button">Paketi Güncelle</button>
       </div>
     </div>
-
     <div class="package-card">
       <div class="package-title">
         <div class="package-title-item">
@@ -111,8 +123,12 @@
       <div class="package-footer">
         <button type="button">Paketi Güncelle</button>
       </div>
-    </div>
+    </div> -->
+
 
 
   </div>
+</div>
+<div class="left-container box-shadow-effect">
+  <app-create-edit></app-create-edit>
 </div>

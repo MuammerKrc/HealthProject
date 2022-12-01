@@ -1,0 +1,40 @@
+
+
+<div class="package-edit-view">
+  <form #packageForm>
+
+  <h2>Paket Düzenle Ekle</h2>
+    <div class="button-groups">
+      <label for="#">Başlık</label>
+      <input placeholder="Diyet ve Pilates Paketi"  #title>
+      <!-- <input type="text" placeholder=""> -->
+    </div>
+    <div class="button-groups">
+      <label for="#">Tanım</label>
+      <input placeholder="Bu paket yüz yüze diyet ve "  #description>
+    </div>
+    <div class="button-groups">
+      <label for="#">Tutar</label>
+      <input type="number" value="0" step="1" #totalSalary>
+    </div>
+    <div class="package-items">
+      <div class="item-symbol">
+        <i class="fa-solid fa-utensils"></i>
+        <h3>Diyet</h3>
+      </div>
+      <input type="number" value="0" step="1" #dietTotal>
+    </div>
+    <div class="package-items">
+      <div class="item-symbol pilates">
+        <i class="fa-solid fa-dumbbell"></i>
+        <h3>Pilates</h3>
+      </div>
+      <input type="number" value="0" step="1" #pilatesTotal>
+    </div>
+    <button type="submit" (click)="create($event,title,description,totalSalary,dietTotal,pilatesTotal,packageForm)">
+      Paket Ekle
+    </button>
+  </form>
+
+</div>
+
