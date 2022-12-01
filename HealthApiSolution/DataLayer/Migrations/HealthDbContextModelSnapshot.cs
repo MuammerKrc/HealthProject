@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DataLayer.Migrations
 {
-    [DbContext(typeof(MovieDbContext))]
-    partial class MovieDbContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(HealthDbContext))]
+    partial class HealthDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
@@ -456,6 +456,9 @@ namespace DataLayer.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("TotalSalary")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("UpdateDate")
                         .HasColumnType("datetime2");
 
@@ -483,10 +486,6 @@ namespace DataLayer.Migrations
 
                     b.Property<bool>("SoftDeleted")
                         .HasColumnType("bit");
-
-                    b.Property<string>("Title")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Total")
                         .HasColumnType("int");
@@ -826,7 +825,7 @@ namespace DataLayer.Migrations
             modelBuilder.Entity("CoreLayer.Models.PackageModel.PackageItem", b =>
                 {
                     b.HasOne("CoreLayer.Models.PackageModel.Package", "Package")
-                        .WithMany("PackageItems")
+                        .WithMany("PackageItemRelations")
                         .HasForeignKey("PackageId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -940,7 +939,7 @@ namespace DataLayer.Migrations
 
             modelBuilder.Entity("CoreLayer.Models.PackageModel.Package", b =>
                 {
-                    b.Navigation("PackageItems");
+                    b.Navigation("PackageItemRelations");
                 });
 
             modelBuilder.Entity("CoreLayer.Models.PilatesModels.Pilates", b =>

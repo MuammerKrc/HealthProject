@@ -11,9 +11,9 @@ using DataLayer.Repositories.BaseRepositories;
 
 namespace DataLayer.Repositories
 {
-    public class PackageItemRepository : BaseRepository<Package, int>,IPackageItemRepository
+    public class PackageItemRepository : BaseRepository<PackageItem, int>,IPackageItemRepository
     {
-        public PackageItemRepository(MovieDbContext context) : base(context)
+        public PackageItemRepository(HealthDbContext context) : base(context)
         {
         }
     }

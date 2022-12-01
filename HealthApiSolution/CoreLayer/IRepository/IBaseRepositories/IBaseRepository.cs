@@ -15,7 +15,7 @@ namespace CoreLayer.IRepositories.IBaseRepositories
         DbSet<TModel> _entities { get; }
         void Add(TModel model);
         int GetCount();
-        void AddAll(IEnumerable<TModel> models);
+        Task AddAll(IEnumerable<TModel> models);
         void Update(TModel model);
         Task Delete(TKey id);
         Task SoftDelete(TKey id);

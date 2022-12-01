@@ -12,9 +12,9 @@ namespace DataLayer.UnitOfWorks
 {
     public class UnitOfWork : IUnitOfWork
     {
-        private readonly MovieDbContext _context;
+        private readonly HealthDbContext _context;
 
-        public UnitOfWork(MovieDbContext context)
+        public UnitOfWork(HealthDbContext context)
         {
             _context = context;
         }

@@ -14,8 +14,8 @@ namespace ServiceLayer.Services.BaseServices
 {
     public class BaseService<TModel, TDto, TKey> : IBaseService<TModel, TDto, TKey> where TModel : BaseModel<TKey>
     {
-        IBaseRepository<TModel, TKey> _repository;
-        IMapper _mapper;
+        public IBaseRepository<TModel, TKey> _repository;
+        public IMapper _mapper;
 
 
         public BaseService(IBaseRepository<TModel, TKey> repository, IMapper mapper)

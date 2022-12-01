@@ -13,7 +13,7 @@ namespace DataLayer.Repositories
 {
     public class BuyingReportRepository : BaseRepository<BuyingReport, int>,IBuyingReportRepository
     {
-        public BuyingReportRepository(MovieDbContext context) : base(context)
+        public BuyingReportRepository(HealthDbContext context) : base(context)
         {
         }
     }

@@ -33,6 +33,7 @@ namespace DataLayer.Migrations
                     FullName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     RefreshToken = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     RefreshTokenEndDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    IsCustomer = table.Column<bool>(type: "bit", nullable: false),
                     UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     Email = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
@@ -51,6 +52,58 @@ namespace DataLayer.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "DetoxRecipes",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Link = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UpdateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    SoftDeleted = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_DetoxRecipes", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "FoodRecipes",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Link = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UpdateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    SoftDeleted = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_FoodRecipes", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Packages",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    TotalSalary = table.Column<int>(type: "int", nullable: false),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UpdateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    SoftDeleted = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Packages", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -160,7 +213,7 @@ namespace DataLayer.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "BodyInfo",
+                name: "BodyInfos",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -173,16 +226,16 @@ namespace DataLayer.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_BodyInfo", x => x.Id);
+                    table.PrimaryKey("PK_BodyInfos", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_BodyInfo_AspNetUsers_UserId",
+                        name: "FK_BodyInfos_AspNetUsers_UserId",
                         column: x => x.UserId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
-                name: "BuyingReport",
+                name: "BuyingReports",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -198,16 +251,16 @@ namespace DataLayer.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_BuyingReport", x => x.Id);
+                    table.PrimaryKey("PK_BuyingReports", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_BuyingReport_AspNetUsers_UserId",
+                        name: "FK_BuyingReports_AspNetUsers_UserId",
                         column: x => x.UserId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
-                name: "Diet",
+                name: "Diets",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -219,9 +272,9 @@ namespace DataLayer.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Diet", x => x.Id);
+                    table.PrimaryKey("PK_Diets", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Diet_AspNetUsers_UserId",
+                        name: "FK_Diets_AspNetUsers_UserId",
                         column: x => x.UserId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id");
@@ -249,6 +302,30 @@ namespace DataLayer.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "PackageItems",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    PackageType = table.Column<int>(type: "int", nullable: false),
+                    Total = table.Column<int>(type: "int", nullable: false),
+                    PackageId = table.Column<int>(type: "int", nullable: false),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UpdateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    SoftDeleted = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_PackageItems", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_PackageItems_Packages_PackageId",
+                        column: x => x.PackageId,
+                        principalTable: "Packages",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "AnamnesisForm",
                 columns: table => new
                 {
@@ -269,15 +346,15 @@ namespace DataLayer.Migrations
                 {
                     table.PrimaryKey("PK_AnamnesisForm", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_AnamnesisForm_Diet_DietId",
+                        name: "FK_AnamnesisForm_Diets_DietId",
                         column: x => x.DietId,
-                        principalTable: "Diet",
+                        principalTable: "Diets",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "DietWeekly",
+                name: "DietWeeklies",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -293,17 +370,17 @@ namespace DataLayer.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_DietWeekly", x => x.Id);
+                    table.PrimaryKey("PK_DietWeeklies", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_DietWeekly_Diet_DietId",
+                        name: "FK_DietWeeklies_Diets_DietId",
                         column: x => x.DietId,
-                        principalTable: "Diet",
+                        principalTable: "Diets",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "PilatesWeekly",
+                name: "PilatesWeeklies",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -319,9 +396,9 @@ namespace DataLayer.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_PilatesWeekly", x => x.Id);
+                    table.PrimaryKey("PK_PilatesWeeklies", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_PilatesWeekly_Pilates_PilatesId",
+                        name: "FK_PilatesWeeklies_Pilates_PilatesId",
                         column: x => x.PilatesId,
                         principalTable: "Pilates",
                         principalColumn: "Id",
@@ -329,7 +406,7 @@ namespace DataLayer.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "NutritionSchedule",
+                name: "NutritionSchedules",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -341,37 +418,75 @@ namespace DataLayer.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_NutritionSchedule", x => x.Id);
+                    table.PrimaryKey("PK_NutritionSchedules", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_NutritionSchedule_DietWeekly_DietWeeklyId",
+                        name: "FK_NutritionSchedules_DietWeeklies_DietWeeklyId",
                         column: x => x.DietWeeklyId,
-                        principalTable: "DietWeekly",
+                        principalTable: "DietWeeklies",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "NutritionScheduleItem",
+                name: "NutritionScheduleItems",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     NutritionScheduleId = table.Column<int>(type: "int", nullable: false),
                     MealTimeType = table.Column<int>(type: "int", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    GeneralInfo = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    TimeInterval = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     SoftDeleted = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_NutritionScheduleItem", x => x.Id);
+                    table.PrimaryKey("PK_NutritionScheduleItems", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_NutritionScheduleItem_NutritionSchedule_NutritionScheduleId",
+                        name: "FK_NutritionScheduleItems_NutritionSchedules_NutritionScheduleId",
                         column: x => x.NutritionScheduleId,
-                        principalTable: "NutritionSchedule",
+                        principalTable: "NutritionSchedules",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "DietDividedIntoDays",
+                columns: table => new
+                {
+                    Id = table.Column<long>(type: "bigint", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    HowManyDays = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    WhichDay = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    DetoxRecipeId = table.Column<int>(type: "int", nullable: true),
+                    FoodRecipeId = table.Column<int>(type: "int", nullable: true),
+                    NutritionScheduleItemId = table.Column<int>(type: "int", nullable: true),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UpdateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    SoftDeleted = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_DietDividedIntoDays", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_DietDividedIntoDays_DetoxRecipes_DetoxRecipeId",
+                        column: x => x.DetoxRecipeId,
+                        principalTable: "DetoxRecipes",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_DietDividedIntoDays_FoodRecipes_FoodRecipeId",
+                        column: x => x.FoodRecipeId,
+                        principalTable: "FoodRecipes",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_DietDividedIntoDays_NutritionScheduleItems_NutritionScheduleItemId",
+                        column: x => x.NutritionScheduleItemId,
+                        principalTable: "NutritionScheduleItems",
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateIndex(
@@ -420,39 +535,59 @@ namespace DataLayer.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
-                name: "IX_BodyInfo_UserId",
-                table: "BodyInfo",
+                name: "IX_BodyInfos_UserId",
+                table: "BodyInfos",
                 column: "UserId",
                 unique: true,
                 filter: "[UserId] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
-                name: "IX_BuyingReport_UserId",
-                table: "BuyingReport",
+                name: "IX_BuyingReports_UserId",
+                table: "BuyingReports",
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Diet_UserId",
-                table: "Diet",
+                name: "IX_DietDividedIntoDays_DetoxRecipeId",
+                table: "DietDividedIntoDays",
+                column: "DetoxRecipeId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_DietDividedIntoDays_FoodRecipeId",
+                table: "DietDividedIntoDays",
+                column: "FoodRecipeId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_DietDividedIntoDays_NutritionScheduleItemId",
+                table: "DietDividedIntoDays",
+                column: "NutritionScheduleItemId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Diets_UserId",
+                table: "Diets",
                 column: "UserId",
                 unique: true,
                 filter: "[UserId] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
-                name: "IX_DietWeekly_DietId",
-                table: "DietWeekly",
+                name: "IX_DietWeeklies_DietId",
+                table: "DietWeeklies",
                 column: "DietId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_NutritionSchedule_DietWeeklyId",
-                table: "NutritionSchedule",
+                name: "IX_NutritionScheduleItems_NutritionScheduleId",
+                table: "NutritionScheduleItems",
+                column: "NutritionScheduleId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_NutritionSchedules_DietWeeklyId",
+                table: "NutritionSchedules",
                 column: "DietWeeklyId",
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_NutritionScheduleItem_NutritionScheduleId",
-                table: "NutritionScheduleItem",
-                column: "NutritionScheduleId");
+                name: "IX_PackageItems_PackageId",
+                table: "PackageItems",
+                column: "PackageId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Pilates_UserId",
@@ -462,8 +597,8 @@ namespace DataLayer.Migrations
                 filter: "[UserId] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
-                name: "IX_PilatesWeekly_PilatesId",
-                table: "PilatesWeekly",
+                name: "IX_PilatesWeeklies_PilatesId",
+                table: "PilatesWeeklies",
                 column: "PilatesId");
         }
 
@@ -488,31 +623,46 @@ namespace DataLayer.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "BodyInfo");
+                name: "BodyInfos");
 
             migrationBuilder.DropTable(
-                name: "BuyingReport");
+                name: "BuyingReports");
 
             migrationBuilder.DropTable(
-                name: "NutritionScheduleItem");
+                name: "DietDividedIntoDays");
 
             migrationBuilder.DropTable(
-                name: "PilatesWeekly");
+                name: "PackageItems");
+
+            migrationBuilder.DropTable(
+                name: "PilatesWeeklies");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
-                name: "NutritionSchedule");
+                name: "DetoxRecipes");
+
+            migrationBuilder.DropTable(
+                name: "FoodRecipes");
+
+            migrationBuilder.DropTable(
+                name: "NutritionScheduleItems");
+
+            migrationBuilder.DropTable(
+                name: "Packages");
 
             migrationBuilder.DropTable(
                 name: "Pilates");
 
             migrationBuilder.DropTable(
-                name: "DietWeekly");
+                name: "NutritionSchedules");
 
             migrationBuilder.DropTable(
-                name: "Diet");
+                name: "DietWeeklies");
+
+            migrationBuilder.DropTable(
+                name: "Diets");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");

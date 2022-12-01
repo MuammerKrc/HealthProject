@@ -13,7 +13,7 @@ namespace DataLayer.Repositories
 {
     public class DietWeeklyRepository : BaseRepository<DietWeekly, int>,IDietWeeklyRepository
     {
-        public DietWeeklyRepository(MovieDbContext context) : base(context)
+        public DietWeeklyRepository(HealthDbContext context) : base(context)
         {
         }
     }

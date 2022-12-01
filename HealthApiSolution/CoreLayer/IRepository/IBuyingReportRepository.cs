@@ -10,5 +10,6 @@ namespace CoreLayer.IRepository
 {
     public interface IBuyingReportRepository : IBaseRepository<BuyingReport, int>
     {
+
     }
 }

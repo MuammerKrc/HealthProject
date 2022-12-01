@@ -14,7 +14,7 @@ namespace DataLayer.Repositories
 {
     public class BodyInfoRepository : BaseRepository<BodyInfo, int>,IBodyInfoRepository
     {
-        public BodyInfoRepository(MovieDbContext context) : base(context)
+        public BodyInfoRepository(HealthDbContext context) : base(context)
         {
         }
     }

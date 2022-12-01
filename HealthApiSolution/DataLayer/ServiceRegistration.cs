@@ -20,7 +20,7 @@ namespace DataLayer
     {
         public static void AddDataLayerRegistration(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddDbContext<MovieDbContext>(i =>
+            services.AddDbContext<HealthDbContext>(i =>
             {
                 i.UseSqlServer(configuration.GetConnectionString("DefaultConnection"), opt =>
                 {
@@ -37,7 +37,7 @@ namespace DataLayer
                 opt.Password.RequireNonAlphanumeric = false;
                 opt.Password.RequiredLength = 5;
                 opt.Password.RequiredUniqueChars = 3;
-            }).AddEntityFrameworkStores<MovieDbContext>().AddDefaultTokenProviders();
+            }).AddEntityFrameworkStores<HealthDbContext>().AddDefaultTokenProviders();
 
             //UnitOfWorks
 

@@ -1,5 +1,6 @@
 using System.Security.Claims;
 using System.Text;
+using System.Text.Json.Serialization;
 using CoreLayer.ConfigurationModels;
 using DataLayer;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -7,11 +8,23 @@ using Microsoft.IdentityModel.Tokens;
 using ServiceLayer;
 
 var builder = WebApplication.CreateBuilder(args);
+
 builder.Services.AddHttpContextAccessor();
 // Add services to the container.
 builder.Services.AddDataLayerRegistration(builder.Configuration);
 builder.Services.AddServiceLayerRegistration(builder.Configuration);
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+    .AddJsonOptions(i =>
+    {
+        i.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
+    }).ConfigureApiBehaviorOptions(
+    opt =>
+    {
+        opt.SuppressModelStateInvalidFilter = true;
+    }); ;
+
+
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

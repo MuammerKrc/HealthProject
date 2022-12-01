@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "YYtIBdfXDj7qFpzByVMjSXJxthUDBCXoJPXgpCQ6LVB9o55qztwezuuEjknJk2KsfiNr1NAdphCwhSIm0MOeRw==",
+  "dgSpecHash": "Dhd8UoEgfL1dL60UPrIHSv9QlGNQFq8xsx61jGB8+e0xbmnYOQCey2DLoOL5rRlrQFfCxmZSjtU2mSXGLe8VeQ==",
   "success": true,
   "projectFilePath": "F:\\ownerProject\\HealthProjects\\HealthApiSolution\\CoreLayer\\CoreLayer.csproj",
   "expectedPackageFiles": [
@@ -22,9 +22,13 @@
     "C:\\Users\\muamm\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.0\\microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\muamm\\.nuget\\packages\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",
     "C:\\Users\\muamm\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
+    "C:\\Users\\muamm\\.nuget\\packages\\nuget.common\\6.2.1\\nuget.common.6.2.1.nupkg.sha512",
+    "C:\\Users\\muamm\\.nuget\\packages\\nuget.configuration\\6.2.1\\nuget.configuration.6.2.1.nupkg.sha512",
+    "C:\\Users\\muamm\\.nuget\\packages\\nuget.frameworks\\6.2.1\\nuget.frameworks.6.2.1.nupkg.sha512",
     "C:\\Users\\muamm\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",
     "C:\\Users\\muamm\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0\\system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",
-    "C:\\Users\\muamm\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+    "C:\\Users\\muamm\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "C:\\Users\\muamm\\.nuget\\packages\\system.security.cryptography.protecteddata\\4.4.0\\system.security.cryptography.protecteddata.4.4.0.nupkg.sha512"
   ],
   "logs": []
 }

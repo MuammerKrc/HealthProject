@@ -12,6 +12,7 @@ namespace CoreLayer.Models.PackageModel
     {
         public string Title { get; set; }
         public string Description { get; set; }
-        public List<PackageItem> PackageItems { get; set; } = new();
+        public int TotalSalary { get; set; }
+        public ICollection<PackageItem> PackageItemRelations { get; set; }
     }
 }

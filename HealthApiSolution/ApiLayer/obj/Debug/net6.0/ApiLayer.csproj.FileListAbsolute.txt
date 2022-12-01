@@ -73,3 +73,6 @@ F:\ownerProject\HealthProjects\HealthApiSolution\ApiLayer\bin\Debug\net6.0\Servi
 F:\ownerProject\HealthProjects\HealthApiSolution\ApiLayer\bin\Debug\net6.0\Humanizer.dll
 F:\ownerProject\HealthProjects\HealthApiSolution\ApiLayer\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 F:\ownerProject\HealthProjects\HealthApiSolution\ApiLayer\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+F:\ownerProject\HealthProjects\HealthApiSolution\ApiLayer\bin\Debug\net6.0\NuGet.Common.dll
+F:\ownerProject\HealthProjects\HealthApiSolution\ApiLayer\bin\Debug\net6.0\NuGet.Configuration.dll
+F:\ownerProject\HealthProjects\HealthApiSolution\ApiLayer\bin\Debug\net6.0\NuGet.Frameworks.dll

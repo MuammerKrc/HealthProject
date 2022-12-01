@@ -8,8 +8,10 @@ using CoreLayer.Models.PackageModel;
 
 namespace CoreLayer.IRepository
 {
-    public interface IPackageItemRepository : IBaseRepository<Package, int>
+    public interface IPackageItemRepository : IBaseRepository<PackageItem, int>
     {
 
     }
+
+    
 }

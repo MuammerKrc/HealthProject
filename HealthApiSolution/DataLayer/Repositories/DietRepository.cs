@@ -14,7 +14,7 @@ namespace DataLayer.Repositories
 {
     public class DietRepository : BaseRepository<Diet, int>,IDietRepository
     {
-        public DietRepository(MovieDbContext context) : base(context)
+        public DietRepository(HealthDbContext context) : base(context)
         {
         }
     }

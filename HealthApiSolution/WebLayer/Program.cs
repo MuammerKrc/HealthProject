@@ -1,4 +1,5 @@
 using DataLayer;
+using Newtonsoft.Json;
 using ServiceLayer;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -6,6 +7,8 @@ builder.Services.AddHttpContextAccessor();
 builder.Services.AddDataLayerRegistration(builder.Configuration);
 builder.Services.AddServiceLayerRegistration(builder.Configuration);
 // Add services to the container.
+
+
 
 builder.Services.ConfigureApplicationCookie(opt =>
 {

@@ -20,10 +20,10 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DataLayer.DbContexts
 {
-    public class MovieDbContext : IdentityDbContext<AppUser, AppRole, string>
+    public class HealthDbContext : IdentityDbContext<AppUser, AppRole, string>
     {
 
-        public MovieDbContext(DbContextOptions options) : base(options)
+        public HealthDbContext(DbContextOptions options) : base(options)
         {
 
         }

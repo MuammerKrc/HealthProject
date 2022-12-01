@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "YenG3hCHYyGHU3jwLkIrjUmXYJGQHj7XAeRDWVRte2UYFaTWpXiSzoDXzfv7wr2TaE1BnkLVVXNnSMZCQIc38g==",
+  "dgSpecHash": "uLT9TKna5gLiKZoHscak66e1Lh87OMvvIuX5VoWG25buxo3pU7neM1vIRdvrermWjAmm9mw1lm/3uHAHHHh/Yg==",
   "success": true,
   "projectFilePath": "F:\\ownerProject\\HealthProjects\\HealthApiSolution\\DataLayer\\DataLayer.csproj",
   "expectedPackageFiles": [
@@ -40,6 +40,9 @@
     "C:\\Users\\muamm\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
     "C:\\Users\\muamm\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\muamm\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+    "C:\\Users\\muamm\\.nuget\\packages\\nuget.common\\6.2.1\\nuget.common.6.2.1.nupkg.sha512",
+    "C:\\Users\\muamm\\.nuget\\packages\\nuget.configuration\\6.2.1\\nuget.configuration.6.2.1.nupkg.sha512",
+    "C:\\Users\\muamm\\.nuget\\packages\\nuget.frameworks\\6.2.1\\nuget.frameworks.6.2.1.nupkg.sha512",
     "C:\\Users\\muamm\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
     "C:\\Users\\muamm\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
     "C:\\Users\\muamm\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",

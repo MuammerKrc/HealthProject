@@ -15,9 +15,9 @@ namespace DataLayer.Repositories.BaseRepositories
 {
     public class BaseRepository<TModel, TKey> : IBaseRepository<TModel, TKey> where TModel : BaseModel<TKey>
     {
-        public readonly MovieDbContext _context;
+        public  HealthDbContext _context;
 
-        public BaseRepository(MovieDbContext context)
+        public BaseRepository(HealthDbContext context)
         {
             _context = context;
         }
@@ -26,7 +26,7 @@ namespace DataLayer.Repositories.BaseRepositories
 
         public void Add(TModel model)
         {
-            _context.Entry<TModel>(model).State = EntityState.Added;
+            _context.Set<TModel>().Add(model);
         }
 
         public int GetCount()
@@ -34,20 +34,24 @@ namespace DataLayer.Repositories.BaseRepositories
             return _entities.Count();
         }
 
-        public void AddAll(IEnumerable<TModel> models)
+        public async Task AddAll(IEnumerable<TModel> models)
         {
-            models.ToList().ForEach(i => _context.Entry<TModel>(i).State = EntityState.Added);
+            await _entities.AddRangeAsync(models);
+            //models.ToList().ForEach(i => _context.Entry<TModel>(i).State = EntityState.Added);
         }
 
         public void Update(TModel model)
         {
-            _context.Entry<TModel>(model).State = EntityState.Modified;
+            _entities.Update(model);
+            //_context.Entry<TModel>(model).State = EntityState.Modified;
         }
 
         public async Task Delete(TKey id)
         {
             var result = await GetByIdAsync(id, true);
-            _context.Entry<TModel>(result).State = EntityState.Deleted;
+            _entities.Remove(result);
+
+            //_context.Entry<TModel>(result).State = EntityState.Deleted;
         }
 
         public async Task SoftDelete(TKey id)

@@ -13,7 +13,7 @@ namespace DataLayer.Repositories
 {
     public class AnamnesisFormRepository : BaseRepository<AnamnesisForm, int>,IAnamnesisFormRepository
     {
-        public AnamnesisFormRepository(MovieDbContext context) : base(context)
+        public AnamnesisFormRepository(HealthDbContext context) : base(context)
         {
         }
     }

@@ -19,6 +19,8 @@ namespace CoreLayer.Models.BuyingReportsModel
         public AppUser? User { get; set; }
         public string Description { get; set; }
         public float TotalPrice { get; set; }
+        public string PackageTitle { get; set; }
+        public ICollection<PackageItem> PackageItems { get; set; }
         public PaymentResultType PaymentResultType { get; set; }
         public PaymentType PaymentType { get; set; }
     }
